@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VizAlgoCraft: Visualize your Algorithms</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithm Visualization</title>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
+
 <body>
-    
+  <nav class="container">
+    <div class="logo">VizAlgoCraft</div>
+    <a href="#" class="filter selected active" data-filter="all">All Tasks</a>
+    <a href="#" class="filter" data-filter="finished">Completed</a>
+    <a href="#" class="filter" data-filter="unfinished">Remaining</a>
+  </nav>
+  <canvas id="visualize-canvas"></canvas>
+  <div class="sort-buttons">
+    <button class="cta" value="quick">quick </button>
+    <button class="cta" value="bubble">bubble sort</button>
+    <button class="cta" value="selection">selection sort</button>
+    <div class="compares-container">
+      Number of compares: <span id="compare-count">0</span>
+    </div>
+
+    <script src="scripts/components/config.js"></script>
+    <script src="scripts/constants.js"></script>
+    <script src="scripts/components/util.js"></script>
+    <script src="scripts/components/bar.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
+
 </html>
