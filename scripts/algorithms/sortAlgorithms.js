@@ -1,3 +1,8 @@
+/**
+ * Performs the bubble sort algorithm on an array and generates sorting actions.
+ * @param {number[]} array - The array to be sorted.
+ * @returns {Object[]} - An array of sorting actions representing the steps of the algorithm.
+ */
 const bubbleSort = (array) => {
     let actions = [];
     for (let i = 0; i < array.length; i++) {
