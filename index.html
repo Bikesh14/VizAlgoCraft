@@ -10,24 +10,22 @@
 <body>
   <nav class="container">
     <div class="logo">VizAlgoCraft</div>
-    <a href="#" class="filter selected active" data-filter="all">All Tasks</a>
-    <a href="#" class="filter" data-filter="finished">Completed</a>
-    <a href="#" class="filter" data-filter="unfinished">Remaining</a>
+    <a class="sort-buttons" data-value="quick">quick sort </a>
+    <a class="sort-buttons" data-value="bubble">bubble sort</a>
+    <a class="sort-buttons" data-value="selection">selection sort</a>
   </nav>
   <canvas id="visualize-canvas"></canvas>
-  <div class="sort-buttons">
-    <button class="cta" value="quick">quick </button>
-    <button class="cta" value="bubble">bubble sort</button>
-    <button class="cta" value="selection">selection sort</button>
+  <div>
     <div class="compares-container">
-      Number of compares: <span id="compare-count">0</span>
+      Number of compares: <span id="compare-count"></span>
     </div>
 
-    <script src="scripts/components/config.js"></script>
     <script src="scripts/constants.js"></script>
+    <script src="scripts/components/config.js"></script>
     <script src="scripts/components/util.js"></script>
     <script src="scripts/components/bar.js"></script>
+    <script src="scripts/components/sortActions.js"></script>
+    <script src="scripts/algorithms/sortAlgorithms.js"></script>
     <script src="scripts/index.js"></script>
-</body>
-
+</body> 
 </html>

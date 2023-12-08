@@ -4,7 +4,6 @@ body {
     padding: 0;
     background-color: #f8f9fa;
   }
-
   
 nav {
     background-color: #ffffff;
@@ -28,15 +27,16 @@ position: relative;
 }
 
 nav a:hover {
-background-color: #ddd;
+/* background-color: #ddd; */
 color: #000000;
+cursor: pointer;
 }
 
 nav a.active {
 color: #2e7eb8;
 }
 
-nav a.active::after {
+/* nav a.active::after {
 content: '';
 display: block;
 height: 4px;
@@ -45,7 +45,7 @@ background-color: #2e7eb8;
 position: absolute;
 bottom: 0;
 left: 0;
-}
+} */
 
 .logo {
     margin-right: auto;
@@ -54,29 +54,3 @@ left: 0;
     }
   }
 
-  /* Random css */
-  
-#array {
-    background-color: white;
-    height: 413px;
-    width: 598px;
-    margin: auto;
-    position: relative;
-    margin-top: 64px;
-}
- 
-.block {
-    width: 28px;
-    background-color: #6b5b95;
-    position: absolute;
-    bottom: 0px;
-    transition: 0.2s all ease;
-}
- 
-.block_id {
-    position: absolute;
-    color: black;
-    margin-top: -20px;
-    width: 100%;
-    text-align: center;
-}
