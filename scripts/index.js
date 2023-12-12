@@ -5,7 +5,7 @@ const ctx = canvas.getContext("2d");
 let notCalledYet = true;
 const numberOfCompares = document.getElementById("compare-count");
 let lines = [];
-const elements_array = [100, 80, 10, 200, 300, 50, 600];
+let elements_array = [100, 80, 10, 200, 300, 50, 600];
 // const elements_array = randomArrayGenerator(configurations.number_of_elements);
 
 const lineWidth = calcBarWidth(elements_array.length);
@@ -37,6 +37,10 @@ Array.from(document.getElementsByClassName("sort-buttons")).forEach(
         timers.forEach((id) => clearTimeout(id));
         timers = [];
         ctx.clearRect(0, 0, innerWidth, innerHeight);
+        lines = [];
+        elements_array = randomArrayGenerator(
+          configurations.number_of_elements
+        );
         initLines();
         numberOfCompares.innerText = "";
       }
