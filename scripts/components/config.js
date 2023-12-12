@@ -1,5 +1,5 @@
 const configurations = {
-  algorithm: "",
+  algorithm: "bubble",
   number_of_elements: 10,
   speed: 500,
   start: false,
