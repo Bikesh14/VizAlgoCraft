@@ -4,6 +4,8 @@ canvas.height = innerHeight / 2;
 const ctx = canvas.getContext("2d");
 let notCalledYet = true;
 const numberOfCompares = document.getElementById("compare-count");
+const customArray = document.getElementById("custom-array");
+
 let lines = [];
 let elements_array = [100, 80, 10, 200, 300, 50, 600];
 // const elements_array = randomArrayGenerator(configurations.number_of_elements);
