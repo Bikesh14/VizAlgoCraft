@@ -50,11 +50,14 @@ const resetSpecifiedColor = (color) =>
 /**
  * Animates the sorting process based on the selected algorithm.
  */
+
 function animate() {
+  console.log(sortingStates, elements_array);
   sortingStates[configurations.algorithm]().forEach((action, i) => {
     timers.push(
       setTimeout(() => {
         ctx.clearRect(0, 0, innerWidth, innerHeight);
+        console.log(action);
         sortActionsMap[action.type](action);
         lines.forEach((l) => l.draw(ctx));
         resetSpecifiedColor("yellow");
