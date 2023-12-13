@@ -107,14 +107,20 @@ customArrayInput.addEventListener("input", function () {
       parseInt(element.trim(), 10)
     );
     // Check if all elements are valid integers
+    if (numericArray.every((element) => Number.isInteger(element))) {
+      // Rewrite elements_array with the new array of integers
+      elements_array = numericArray;
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      lines = [];
 
-    elements_array = numericArray;
-    ctx.clearRect(0, 0, innerWidth, innerHeight);
-    lines = [];
-
-    // Render Initlines (replace this with your rendering logic)
-    initLines();
-    lines.forEach((l) => l.draw(ctx));
+      // Render Initlines (replace this with your rendering logic)
+      initLines();
+      lines.forEach((l) => l.draw(ctx));
+    } else {
+      console.log(
+        "Invalid array format. Please enter a valid array of integers separated by commas."
+      );
+    }
   }, 3000);
 });
 
