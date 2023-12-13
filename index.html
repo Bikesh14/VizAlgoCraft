@@ -1,38 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Algorithm Visualization</title>
-  <link rel="stylesheet" href="styles/style.css" />
-</head>
-
-<body>
-  <nav class="container">
-   <div class="logo">VizAlgoCraft</div>
-    <select id="sort-algorithm">
-      <option value="bubble">Bubble Sort</option>
-      <option value="selection">Selection Sort</option>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm Visualization</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">VizAlgoCraft</div>
+        <div class="sort-choices">
+          <select id="sort-algorithm">
+            <option value="bubble">Bubble Sort</option>
+            <option value="selection">Selection Sort</option>
             <option value="quick">Quick Sort</option>
-
-    </select> 
-    <select id="array-options">
-      <option value="random">Random Data</option>
-      <option value="custom">Custom</option>
-
-    </select> 
-    <div id="custom-array-section" style="display: none;">
-           <label for="custom-array" >Enter Array:</label>
-    <input type="text" id="custom-array" placeholder="e.g [10, 2, 1, ...]">
-
+          </select>
+          <select id="speed-options">
+            <option value="fast">Fast</option>
+            <option value="medium">Medium</option>
+            <option value="slow">Slow</option>
+            <option value="very-slow">Very Slow</option>
+          </select>
+          <select id="array-options">
+            <option value="random">Random Data</option>
+            <option value="custom">Custom</option>
+          </select>
+          <div id="custom-array-section" style="display: none">
+            <label for="custom-array">Enter Array:</label>
+            <input
+              type="text"
+              id="custom-array"
+              placeholder="e.g [10, 2, 1, ...]"
+            />
+          </div>
+          <button id="sort-button">Sort</button>
+        </div>
+      </div>
+      <canvas id="visualize-canvas"> </canvas>
+      <div class="compares-container">
+        Number of compares: <span id="compare-count"></span>
+      </div>
     </div>
-    <button id="sort-button">Sort</button>
-  </nav>
-  <canvas id="visualize-canvas"></canvas>
-  <div>
-    <div class="compares-container">
-      Number of compares: <span id="compare-count"></span>
-    </div>
+
     <script src="scripts/constants.js"></script>
     <script src="scripts/components/config.js"></script>
     <script src="scripts/components/util.js"></script>
@@ -40,7 +50,7 @@
     <script src="scripts/components/sortActions.js"></script>
     <script src="scripts/algorithms/bubbleSort.js"></script>
     <script src="scripts/algorithms/selectionSort.js"></script>
-        <script src="scripts/algorithms/quickSort.js"></script>
+    <script src="scripts/algorithms/quickSort.js"></script>
     <script src="scripts/index.js"></script>
-</body> 
+  </body>
 </html>

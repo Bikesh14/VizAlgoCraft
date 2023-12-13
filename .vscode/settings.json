@@ -15,5 +15,5 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Visual Studio Dark - C++"
+  "workbench.colorTheme": "Default Dark+"
 }
