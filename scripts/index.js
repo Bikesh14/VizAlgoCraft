@@ -25,6 +25,9 @@ const initLines = () => {
   });
 };
 
+// function basicSetup(elements_array){
+
+// }
 const customArraySection = document.getElementById("custom-array-section");
 document
   .getElementById("array-options")
@@ -58,6 +61,62 @@ document
         break;
     }
   });
+
+// const customArrayInput = document.getElementById("custom-array");
+
+// customArrayInput.addEventListener("input", function () {
+//   const enteredArrayString = this.value;
+
+//   // Split the string into an array of strings
+//   const enteredArray = enteredArrayString.split(",");
+
+//   // Convert the array of strings to an array of integers
+//   const numericArray = enteredArray.map((element) =>
+//     parseInt(element.trim(), 10)
+//   );
+
+//   // Check if all elements are valid integers
+//   if (numericArray.every((element) => Number.isInteger(element))) {
+//     // Rewrite elements_array with the new array of integers
+//     elements_array = numericArray;
+
+//     // Render Initlines (replace this with your rendering logic)
+//     initLines();
+//     lines.forEach((l) => l.draw(ctx));
+//   } else {
+//     console.log(
+//       "Invalid array format. Please enter a valid array of integers separated by commas."
+//     );
+//   }
+// });
+
+const customArrayInput = document.getElementById("custom-array");
+let timeoutId;
+
+customArrayInput.addEventListener("input", function () {
+  // Clear the previous timeout
+  clearTimeout(timeoutId);
+
+  // Timeout is set for better User Experience
+  timeoutId = setTimeout(function () {
+    const enteredArrayString = customArrayInput.value;
+    // Split the string into an array of strings
+    const enteredArray = enteredArrayString.split(",");
+    // Convert the array of strings to an array of integers
+    const numericArray = enteredArray.map((element) =>
+      parseInt(element.trim(), 10)
+    );
+    // Check if all elements are valid integers
+
+    elements_array = numericArray;
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    lines = [];
+
+    // Render Initlines (replace this with your rendering logic)
+    initLines();
+    lines.forEach((l) => l.draw(ctx));
+  }, 3000);
+});
 
 initLines();
 let timers = [];
