@@ -6,7 +6,7 @@ let notCalledYet = true;
 const numberOfCompares = document.getElementById("compare-count");
 
 let lines = [];
-let elements_array = [100, 80, 10, 200, 300, 50, 600];
+let elements_array = [100, 80, 30, 200, 300, 50, 600];
 // const elements_array = randomArrayGenerator(configurations.number_of_elements);
 
 const lineWidth = calcBarWidth(elements_array.length);
@@ -26,12 +26,36 @@ const initLines = () => {
 };
 
 const customArraySection = document.getElementById("custom-array-section");
-document.getElementById("array-options").addEventListener("change", function () {
+document
+  .getElementById("array-options")
+  .addEventListener("change", function () {
     const selectedOption = this.value;
     if (selectedOption === "custom") {
       customArraySection.style.display = "block";
     } else {
       customArraySection.style.display = "none";
+    }
+  });
+
+const speedSelection = document.getElementById("custom-array-section");
+document
+  .getElementById("speed-options")
+  .addEventListener("change", function () {
+    const selectedOption = this.value;
+    console.log("Speed", selectedOption);
+    switch (selectedOption) {
+      case "fast":
+        configurations.speed = 200;
+        break;
+      case "medium":
+        configurations.speed = 400;
+        break;
+      case "slow":
+        configurations.speed = 800;
+        break;
+      case "very-slow":
+        configurations.speed = 1600;
+        break;
     }
   });
 

@@ -1,7 +1,7 @@
 const configurations = {
   algorithm: "bubble",
   number_of_elements: 10,
-  speed: 500,
+  speed: 200,
   start: false,
 };
 
