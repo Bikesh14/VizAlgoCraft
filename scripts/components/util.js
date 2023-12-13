@@ -15,7 +15,9 @@ const randomArrayGenerator = (number_of_elements) => {
  * @returns {number} - The calculated bar width.
  */
 const calcBarWidth = (array_length) => {
-  return Math.floor(canvas.width / array_length);
+  //subtracting array length to avoid overflowing, as space is there between two bars the bars gets overflowed
+  canvasMaxWidth = canvas.width - array_length;
+  return canvasMaxWidth / array_length;
 };
 
 /**
@@ -25,7 +27,9 @@ const calcBarWidth = (array_length) => {
  */
 const calcLineHeightMultiplier = (elements) => {
   let maxValue = Math.max(...elements);
-  return canvas.height / maxValue;
+  //subtracting 30 since I have shifted the vertical height down 30 to show numbers
+  barMaxHeight = canvas.height - 30;
+  return barMaxHeight / maxValue;
 };
 
 /**
