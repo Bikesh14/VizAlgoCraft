@@ -15,7 +15,6 @@ function visualizeBars() {
   let timers = [];
   lines.forEach((l) => l.draw(ctx));
 }
-
 visualizeBars();
 
 const customArraySection = document.getElementById("custom-array-section");
@@ -84,6 +83,18 @@ customArrayInput.addEventListener("input", function () {
   }, 1000);
 });
 
+const elementsCountSlider = document.getElementById("elements-count");
+let timeoutNew;
+elementsCountSlider.addEventListener("input", function () {
+  configurations.number_of_elements = parseInt(this.value, 10);
+  console.log("check?", configurations.number_of_elements);
+
+  // Generate a random array with the specified number of elements
+  elements_array = randomArrayGenerator(configurations.number_of_elements);
+  console.log("Updated?", elements_array);
+  visualizeBars();
+});
+
 let timers = [];
 
 document.getElementById("sort-button").addEventListener("click", function () {
@@ -98,7 +109,7 @@ document.getElementById("sort-button").addEventListener("click", function () {
     ctx.clearRect(0, 0, innerWidth, innerHeight);
     lines = [];
 
-    initLines();
+    c.initLines();
     numberOfCompares.innerText = "";
   }
   animate();

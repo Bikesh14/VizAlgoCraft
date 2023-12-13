@@ -7,16 +7,8 @@ class Canvas {
     ctx.clearRect(0, 0, innerWidth, innerHeight);
     lines = [];
     let lineWidth = calcBarWidth(elements_array.length);
-    return this.elements_array.forEach((v, i) => {
-      lines.push(
-        new Bar(
-          lineWidth * i + i,
-          0,
-          lineWidth,
-          v * calcLineHeightMultiplier(elements_array),
-          this.color
-        )
-      );
+    return this.elements_array.forEach((value, i) => {
+      lines.push(new Bar(lineWidth * i + i, 0, lineWidth, value, this.color));
     });
   }
 }

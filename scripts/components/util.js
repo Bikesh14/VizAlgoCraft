@@ -3,21 +3,11 @@
  * @param {number} number_of_elements - The number of elements to generate in the array (default is 5).
  * @returns {number[]} - The generated and shuffled array.
  */
-const randomArrayGenerator = (number_of_elements = 5) => {
+const randomArrayGenerator = (number_of_elements) => {
   let arr = [];
   for (let i = 1; i <= number_of_elements; i++) arr.push(i);
   return arr.sort((a, b) => (Math.random() > 0.5 ? 1 : -1)); //While sorting,returning 1 changes the order of two elements, -1 preserves the order
 };
-
-// window.addEventListener('resize', () => {
-//   // Recalculate and update the lineWidth when the window is resized
-//   canvas.width = innerWidth/2
-//   canvas.height = innerHeight/4;
-//   calcBarWidth();
-//   initLines();
-//   animate()
-//   // Do something with the newLineWidth, e.g., update your visualization
-// });
 
 /**
  * Calculates the width of a bar based on the number of elements.

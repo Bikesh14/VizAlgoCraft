@@ -7,14 +7,15 @@ class Bar {
    * @param {number} x - The x-coordinate of the top-left corner of the bar.
    * @param {number} y - The y-coordinate of the top-left corner of the bar.
    * @param {number} width - The width of the bar.
-   * @param {number} height - The height of the bar.
-   * @param {string} [color="gray"] - The color of the bar (default is "gray").
+   * @param {number} value - The height of the bar.
+   * @param {string} [color=custom_blue] - The color of the bar (default is custom_blue).
    */
-  constructor(x, y, width, height, color = "gray") {
+  constructor(x, y, width, value, color = custom_blue) {
     this.x = x;
-    this.y = y;
+    this.y = y + 30;
     this.width = width;
-    this.height = height;
+    this.value = value;
+    this.height = value * calcLineHeightMultiplier(elements_array);
     this.color = color;
   }
 
@@ -25,13 +26,22 @@ class Bar {
   draw(ctx) {
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
+
+    if (elements_array.length <= 20) {
+      const textX = this.x + this.width / 2;
+      const textY = this.y - 10; // Adjust the value for vertical placement
+      ctx.fillStyle = custom_black;
+      ctx.font = "16px Roboto";
+      ctx.textAlign = "center";
+      ctx.fillText(this.value, textX, textY);
+    }
   }
 
   /**
    * Reset the color of the bar to the default color.
    */
   resetColor() {
-    this.color = "gray";
+    this.color = custom_blue;
   }
 
   /**
@@ -44,22 +54,22 @@ class Bar {
 
   /**
    * Set the value and color of the bar if it is not marked as sorted.
-   * @param {number} v - The new value of the bar.
+   * @param {number} value - The new value of the bar.
    * @param {string} color - The new color of the bar.
    */
-  setValue(v, color) {
+  setValue(value, color) {
     if (!this.isSorted()) {
-      this.height = v;
+      this.height = value * calcLineHeightMultiplier(elements_array);
       this.color = color;
+      this.value = value;
     }
   }
 
-   /**
+  /**
    * Get the current value of the bar.
    * @returns {number} - The current value of the bar.
    */
   getValue() {
-    return this.height;
+    return this.value;
   }
 }
-

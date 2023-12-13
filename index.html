@@ -26,22 +26,19 @@
             <option value="random">Random Data</option>
             <option value="custom">Custom</option>
           </select>
-          <!-- <div id="custom-array-section" style="display: block">
-            <label for="custom-array">Number of elements</label>
+          <div id="random-array-section" style="display: block">
             <input
-              type="text"
-              id="custom-array"
-              placeholder="Enter integer value"
+              type="range"
+              min="1"
+              max="100"
+              value="20"
+              class="slider"
+              id="elements-count"
             />
-          </div> -->
-
+          </div>
           <div id="custom-array-section" style="display: none">
-            <label for="custom-array">Enter Array:</label>
-            <input
-              type="text"
-              id="custom-array"
-              placeholder="e.g [10, 2, 1, ...]"
-            />
+            <label for="custom-array">Enter numbers:</label>
+            <input type="text" id="custom-array" placeholder="eg: 3, 5, 4, 7" />
           </div>
           <button id="sort-button">Sort</button>
         </div>
