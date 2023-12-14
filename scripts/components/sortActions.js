@@ -12,6 +12,7 @@ const sortActionsMap = {
    */
   sorted: (action) => {
     const i = action.index;
+    sortStatus.innerText = lines[i].getValue() + " is sorted.";
     lines[i].color = custom_green;
   },
 
@@ -21,6 +22,8 @@ const sortActionsMap = {
    */
   swap: (action) => {
     const [i, j] = action.index;
+    sortStatus.innerText =
+      "Swapping " + lines[i].getValue() + " and " + lines[j].getValue();
     let tmp = lines[i].getValue();
     lines[i].setValue(lines[j].getValue(), "red");
     lines[j].setValue(tmp, "yellow");
@@ -32,6 +35,8 @@ const sortActionsMap = {
    */
   comparing: (action) => {
     const [i, j] = action.index;
+    sortStatus.innerText =
+      "Comparing " + lines[i].getValue() + " and " + lines[j].getValue();
     numberOfCompares.innerText = 1 + Number(numberOfCompares.innerText);
     if (lines[i].color !== custom_green && lines[i].color !== custom_pivot) {
       lines[i].color = "blue";
@@ -47,6 +52,7 @@ const sortActionsMap = {
    */
   pivot: (action) => {
     const i = action.index;
+    sortStatus.innerText = "Setting pivot: " + lines[i].getValue();
     lines[i].color = custom_pivot;
   },
 };

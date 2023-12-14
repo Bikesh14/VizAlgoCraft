@@ -4,6 +4,7 @@ canvas.height = innerHeight / 2;
 const ctx = canvas.getContext("2d");
 let notCalledYet = true;
 const numberOfCompares = document.getElementById("compare-count");
+const sortStatus = document.getElementById("sort-status");
 
 let lines = [];
 // let elements_array = [100, 80, 30, 200, 300, 50, 600];
@@ -99,7 +100,9 @@ let timers = [];
 
 document.getElementById("sort-button").addEventListener("click", function () {
   const selectedAlgorithm = document.getElementById("sort-algorithm").value;
+  // selectedAlgorithm.style.pointerEvents = "none";
   console.log("selectedAlgorithm:", selectedAlgorithm);
+
   configurations.algorithm = selectedAlgorithm;
 
   if (!notCalledYet) {
@@ -113,5 +116,9 @@ document.getElementById("sort-button").addEventListener("click", function () {
     numberOfCompares.innerText = "";
   }
   animate();
-  notCalledYet = false;
+
+  // // const totalAnimationTime = 10000;
+  // setTimeout(function () {
+  //   sortStatus.innerText = " Your complete list is sorted. Yayy!!!";
+  // }, configurations.totalAnimationTime);
 });

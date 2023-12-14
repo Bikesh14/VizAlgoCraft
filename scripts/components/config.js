@@ -1,8 +1,9 @@
 const configurations = {
-  algorithm: "bubble",
+  algorithm: "",
   number_of_elements: 15,
   speed: 200,
   start: false,
+  totalAnimationTime: null,
 };
 
 const uniques = (a) => Array.from(new Set([...a]));

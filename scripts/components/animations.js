@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
  * Animates the sorting process based on the selected algorithm.
  */
 function animate() {
-  console.log(sortingStates, elements_array);
-  sortingStates[configurations.algorithm]().forEach((action, i) => {
+  funcs = sortingStates[configurations.algorithm]();
+  funcs.forEach((action, i) => {
     timers.push(
       setTimeout(() => {
         ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -35,6 +35,9 @@ function animate() {
         lines.forEach((l) => l.draw(ctx));
         resetSpecifiedColor("yellow");
         resetSpecifiedColor("red");
+        if (i === funcs.length - 1) {
+          sortStatus.innerText = " Your complete list is sorted. Yayy!!!";
+        }
       }, configurations.speed * i)
     );
   });
