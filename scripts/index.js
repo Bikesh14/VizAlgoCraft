@@ -34,7 +34,7 @@ document
     }
   });
 
-const speedSelection = document.getElementById("custom-array-section");
+// const speedSelection = document.getElementById("custom-array-section");
 document
   .getElementById("speed-options")
   .addEventListener("change", function () {
@@ -99,8 +99,21 @@ elementsCountSlider.addEventListener("input", function () {
 let timers = [];
 
 document.getElementById("sort-button").addEventListener("click", function () {
+  const algorithmSelection = document.getElementById("sort-algorithm");
+  const speedSelection = document.getElementById("speed-options");
+  const arrayOptionsSelection = document.getElementById("array-options");
+  const randomArraySection = document.getElementById("random-array-section");
+  const customArraySection = document.getElementById("custom-array-section");
+
   const selectedAlgorithm = document.getElementById("sort-algorithm").value;
-  // selectedAlgorithm.style.pointerEvents = "none";
+
+  algorithmSelection.style.pointerEvents = "none";
+  speedSelection.style.pointerEvents = "none";
+  arrayOptionsSelection.style.pointerEvents = "none";
+  randomArraySection.style.pointerEvents = "none";
+  randomArraySection.style.pointerEvents = "none";
+  customArraySection.style.pointerEvents = "none";
+
   console.log("selectedAlgorithm:", selectedAlgorithm);
 
   configurations.algorithm = selectedAlgorithm;
@@ -116,9 +129,4 @@ document.getElementById("sort-button").addEventListener("click", function () {
     numberOfCompares.innerText = "";
   }
   animate();
-
-  // // const totalAnimationTime = 10000;
-  // setTimeout(function () {
-  //   sortStatus.innerText = " Your complete list is sorted. Yayy!!!";
-  // }, configurations.totalAnimationTime);
 });
