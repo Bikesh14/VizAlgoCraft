@@ -8,9 +8,9 @@ class Bar {
    * @param {number} y - The y-coordinate of the top-left corner of the bar.
    * @param {number} width - The width of the bar.
    * @param {number} value - The height of the bar.
-   * @param {string} [color=custom_blue] - The color of the bar (default is custom_blue).
+   * @param {string} [color=theme_color] - The color of the bar (default is theme_color).
    */
-  constructor(x, y, width, value, color = custom_blue) {
+  constructor(x, y, width, value, color = theme_color) {
     this.x = x;
     this.y = y + 30;
     this.width = width;
@@ -41,7 +41,7 @@ class Bar {
    * Reset the color of the bar to the default color.
    */
   resetColor() {
-    this.color = custom_blue;
+    this.color = theme_color;
   }
 
   /**

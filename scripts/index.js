@@ -106,13 +106,16 @@ document.getElementById("sort-button").addEventListener("click", function () {
   const customArraySection = document.getElementById("custom-array-section");
 
   const selectedAlgorithm = document.getElementById("sort-algorithm").value;
-
-  algorithmSelection.style.pointerEvents = "none";
-  speedSelection.style.pointerEvents = "none";
-  arrayOptionsSelection.style.pointerEvents = "none";
-  randomArraySection.style.pointerEvents = "none";
-  randomArraySection.style.pointerEvents = "none";
-  customArraySection.style.pointerEvents = "none";
+  const elementsToDisable = [
+    algorithmSelection,
+    speedSelection,
+    arrayOptionsSelection,
+    randomArraySection,
+    customArraySection,
+  ];
+  elementsToDisable.forEach((element) => {
+    element.style.pointerEvents = "none";
+  });
 
   console.log("selectedAlgorithm:", selectedAlgorithm);
 

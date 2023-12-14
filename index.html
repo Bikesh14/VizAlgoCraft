@@ -6,7 +6,7 @@
     <title>Algorithm Visualization</title>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body>
+  <body>  
     <div class="container">
       <div class="navbar">
         <div class="logo">VizAlgoCraft</div>
@@ -40,14 +40,17 @@
             <label for="custom-array">Enter numbers:</label>
             <input type="text" id="custom-array" placeholder="eg: 3, 5, 4, 7" />
           </div>
-          <button id="sort-button">Sort</button>
+        </div>
+        <div>
+        <svg id="sort-button" style="padding-left: 10px" xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9V168c0-8.7 4.7-16.7 12.3-20.9z"/></svg>
         </div>
       </div>
       <canvas id="visualize-canvas"> </canvas>
-
-      <!-- <div class="content">
-        <button id="toggleBtn">More Info</button>
-      </div> -->
+<audio controls autoplay>
+  <source src="static/audio/audio-1.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+      
       <div class="side-panel-button">
         <button id="toggleBtn"><svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg></i></button>
         <button id="closeBtn"><svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="0 0 512 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"/></svg></i></button>

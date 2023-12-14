@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidePanel = document.querySelector(".side-panel");
   const toggleBtn = document.getElementById("toggleBtn");
   const closeBtn = document.getElementById("closeBtn");
+  toggleBtn.style.backgroundColor = theme_color;
+  sidePanel.style.backgroundColor = theme_color;
 
   // Toggle side panel visibility
   toggleBtn.addEventListener("click", function () {
@@ -10,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     sidePanel.style.display = "block";
     closeBtn.style.display = "block";
     toggleBtn.style.display = "none";
+    toggleBtn.style.backgroundColor = theme_color;
   });
 
   // Close side panel
