@@ -40,6 +40,7 @@ function animate() {
         resetSpecifiedColor("red");
         if (i === funcs.length - 1) {
           sortStatus.innerText = " Your complete list is sorted. Yayy!!!";
+          playAudio("finish");
         }
       }, configurations.speed * i)
     );

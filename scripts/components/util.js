@@ -40,3 +40,16 @@ const resetSpecifiedColor = (color) =>
   lines.forEach(
     (l) => (l.color === color || l.color === "blue") && l.resetColor() //if case=True, execute resetColor() and revert to original color
   );
+
+function playAudio(value) {
+  var audio = document.getElementById("sort-swap-audio");
+  switch (value) {
+    case "swap":
+      audio.src = "static/audio/audio-1.mp3";
+      audio.play();
+      break;
+    case "finish":
+      audio.src = "static/audio/audio-2.mp3";
+      audio.play();
+  }
+}

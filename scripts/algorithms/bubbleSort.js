@@ -19,6 +19,3 @@ const bubbleSort = (array) => {
   }
   return actions;
 };
-
-// const elements_array = [100, 80, 1000, 200, 300, 500, 600];
-// console.log(bubbleSort(elements_array));
