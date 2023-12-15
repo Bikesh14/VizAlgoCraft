@@ -4,6 +4,7 @@
  * @returns {Object[]} - An array of sorting actions representing the steps of the algorithm.
  */
 const bubbleSort = (array) => {
+  let startTime = Date.now();
   let actions = [];
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array.length - i - 1; j++) {
@@ -17,5 +18,15 @@ const bubbleSort = (array) => {
     }
     actions.push(sortActions.sorted(array.length - i - 1));
   }
+  let endTime = Date.now();
+
+  let timeRequired = endTime - startTime;
+  console.log(startTime);
+  console.log(endTime);
+  console.log(
+    "Time required------------------",
+    timeRequired.toFixed(6),
+    "milliseconds"
+  );
   return actions;
 };

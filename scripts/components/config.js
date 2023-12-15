@@ -4,6 +4,11 @@ const configurations = {
   speed: 200,
   start: false,
   totalAnimationTime: null,
+  executionTime: {
+    bubbleSort: null,
+    insertionSort: null,
+    quickSort: null,
+  },
 };
 
 const uniques = (a) => Array.from(new Set([...a]));
