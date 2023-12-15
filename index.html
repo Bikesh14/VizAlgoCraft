@@ -1,75 +1,124 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algorithm Visualization</title>
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body>  
-    <div class="container">
-      <div class="navbar">
-        <div class="logo">VizAlgoCraft</div>
-        <div class="sort-choices">
-          <select id="sort-algorithm">
-            <option value="bubble">Bubble Sort</option>
-            <option value="selection">Selection Sort</option>
-            <option value="quick">Quick Sort</option>
-          </select>
-          <select id="speed-options">
-            <option value="fast">Fast</option>
-            <option value="medium">Medium</option>
-            <option value="slow">Slow</option>
-            <option value="very-slow">Very Slow</option>
-          </select>
-          <select id="array-options">
-            <option value="random">Random Data</option>
-            <option value="custom">Custom</option>
-          </select>
-          <div id="random-array-section" style="display: block">
-            <input
-              type="range"
-              min="1"
-              max="100"
-              value="20"
-              class="slider"
-              id="elements-count"
-            />
-          </div>
-          <div id="custom-array-section" style="display: none">
-            <label for="custom-array">Enter numbers:</label>
-            <input type="text" id="custom-array" placeholder="eg: 3, 5, 4, 7" />
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithm Visualization</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">VizAlgoCraft</div>
+      <div class="sort-choices">
+        <select id="sort-algorithm">
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="quick">Quick Sort</option>
+        </select>
+        <select id="speed-options">
+          <option value="fast">Fast</option>
+          <option value="medium">Medium</option>
+          <option value="slow">Slow</option>
+          <option value="very-slow">Very Slow</option>
+        </select>
+        <select id="array-options">
+          <option value="random">Random Data</option>
+          <option value="custom">Custom</option>
+        </select>
+        <div id="random-array-section" style="display: block">
+          <input type="range" min="1" max="100" value="20" class="slider" id="elements-count" />
         </div>
-        <div>
-        <svg id="sort-button" style="padding-left: 10px" xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9V168c0-8.7 4.7-16.7 12.3-20.9z"/></svg>
+        <div id="custom-array-section" style="display: none">
+          <label for="custom-array">Enter numbers:</label>
+          <input type="text" id="custom-array" placeholder="eg: 3, 5, 4, 7" />
         </div>
       </div>
-      <canvas id="visualize-canvas"> </canvas>
-<audio id="sort-swap-audio">
-  <source type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-      <div class="side-panel-button">
-        <button id="toggleBtn"><svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg></i></button>
-        <button id="closeBtn"><svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="0 0 512 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"/></svg></i></button>
+      <div title="Sort">
+        <svg id="sort-button" style="padding-left: 10px;" xmlns="http://www.w3.org/2000/svg" height="30" width="30"
+          viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+          <path fill="#408c7d"
+            d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9V168c0-8.7 4.7-16.7 12.3-20.9z" />
+        </svg>
       </div>
-      <div class="side-panel">
-        <p>Number of compares: <span id="compare-count"></span></p>
-        <p><span id="sort-status"></span></p>
+      <div title="Reload">
+        <svg id="reload-button" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 512 512">
+          <path fill="#ff4545"
+            d="M0 224c0 17.7 14.3 32 32 32s32-14.3 32-32c0-53 43-96 96-96H320v32c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-9.2-9.2-22.9-11.9-34.9-6.9S320 19.1 320 32V64H160C71.6 64 0 135.6 0 224zm512 64c0-17.7-14.3-32-32-32s-32 14.3-32 32c0 53-43 96-96 96H192V352c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V448H352c88.4 0 160-71.6 160-160z" />
+        </svg>
       </div>
     </div>
+    <canvas id="visualize-canvas"> </canvas>
+    <audio id="sort-swap-audio">
+      <source type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="side-panel-button">
+      <button id="toggleBtn"><svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="0 0 512 512">
+          <path
+            d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" />
+        </svg></i></button>
+      <button id="closeBtn"><svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="0 0 512 512">
+          <path
+            d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z" />
+        </svg></i></button>
+    </div>
+    <div class="side-panel">
+      <ul>
+        <li><strong>Algorithm Selected:</strong> <span id="algorithm-name"></span></li>
+        <li><strong>Number of Compares:</strong>
+          <p><span id="compare-count"></span></p>
+        </li>
+        <li><strong>Status:</strong>
+          <p><span id="sort-status"></span></p>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-    <script src="scripts/constants.js"></script>
-    <script src="scripts/components/config.js"></script>
-    <script src="scripts/components/util.js"></script>
-    <script src="scripts/components/bar.js"></script>
-    <script src="scripts/components/canvas.js"></script>
-    <script src="scripts/components/sortActions.js"></script>
-    <script src="scripts/algorithms/bubbleSort.js"></script>
-    <script src="scripts/algorithms/selectionSort.js"></script>
-    <script src="scripts/algorithms/quickSort.js"></script>
-    <script src="scripts/components/animations.js"></script>
-    <script src="scripts/index.js"></script>
-  </body>
+  <!-- WIndow area -->
+  <div class="window">
+    <div class="window-header">
+      <span class="window-title">Compare the Algorithms</span>
+      <button class="window-exit-btn" onclick="closeWindow()">X</button>
+    </div>
+    <div class="array-values">
+      <strong>Array Values:</strong>
+      <p> Lorem Epsum</p>
+    </div>
+    <div class="window-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Algorithm</th>
+            <th>Time Required</th>
+            <th>Complexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Algorithm 1</td>
+            <td>2 seconds</td>
+            <td>O(n log n)</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="scripts/constants.js"></script>
+  <script src="scripts/components/config.js"></script>
+  <script src="scripts/components/util.js"></script>
+  <script src="scripts/components/bar.js"></script>
+  <script src="scripts/components/canvas.js"></script>
+  <script src="scripts/components/sortActions.js"></script>
+  <script src="scripts/algorithms/bubbleSort.js"></script>
+  <script src="scripts/algorithms/selectionSort.js"></script>
+  <script src="scripts/algorithms/quickSort.js"></script>
+  <script src="scripts/components/animations.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
 </html>

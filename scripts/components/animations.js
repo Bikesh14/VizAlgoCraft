@@ -33,7 +33,7 @@ function animate() {
     timers.push(
       setTimeout(() => {
         ctx.clearRect(0, 0, innerWidth, innerHeight);
-        console.log(action);
+        console.log(action); //printing what action is being performed at the time in console
         sortActionsMap[action.type](action);
         lines.forEach((l) => l.draw(ctx));
         resetSpecifiedColor("yellow");

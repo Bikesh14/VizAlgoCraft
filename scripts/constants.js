@@ -5,3 +5,4 @@ const custom_white = "#F8F4E3";
 const custom_black = "#202030";
 const custom_pivot = "#1DF3FD";
 const custom_blue = "#67729D";
+const custom_alert_color = "#ff4545";

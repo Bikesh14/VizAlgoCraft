@@ -97,8 +97,12 @@ elementsCountSlider.addEventListener("input", function () {
 });
 
 let timers = [];
+const sortButton = document.getElementById("sort-button");
+const reloadButton = document.getElementById("reload-button");
 
-document.getElementById("sort-button").addEventListener("click", function () {
+sortButton.addEventListener("click", function () {
+  sortButton.style.display = "none";
+  reloadButton.style.display = "block";
   const algorithmSelection = document.getElementById("sort-algorithm");
   const speedSelection = document.getElementById("speed-options");
   const arrayOptionsSelection = document.getElementById("array-options");
@@ -117,9 +121,14 @@ document.getElementById("sort-button").addEventListener("click", function () {
     element.style.pointerEvents = "none";
   });
 
+  sidePanel = document.querySelector(".side-panel");
+  sidePanel.style.left = "0";
+  sidePanel.style.display = "block";
   console.log("selectedAlgorithm:", selectedAlgorithm);
 
+  const algorithmName = document.getElementById("algorithm-name");
   configurations.algorithm = selectedAlgorithm;
+  algorithmName.innerText = configurations.algorithm.toUpperCase() + " Sort";
 
   if (!notCalledYet) {
     // reset canvas
@@ -133,3 +142,13 @@ document.getElementById("sort-button").addEventListener("click", function () {
   }
   animate();
 });
+
+reloadButton.addEventListener("click", function () {
+  location.reload();
+  // sortButton.style.display = "block";
+  // reloadButton.style.display = "none";
+});
+// function closeWindow() {
+//   // You can add additional actions here if needed
+//   window.close();
+// }
