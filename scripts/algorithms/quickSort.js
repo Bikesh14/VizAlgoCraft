@@ -56,7 +56,12 @@ const quickSortActions = (array) => {
     return items;
   }
 
+  let startMicroTime = performance.now();
   quickSort([...array]);
   actions.push(sortActions.sorted(0));
+  let endMicroTime = performance.now();
+  configurations.executionTime.quickSort = (
+    endMicroTime - startMicroTime
+  ).toFixed(6);
   return actions;
 };

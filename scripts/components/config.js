@@ -9,6 +9,7 @@ const configurations = {
     insertionSort: null,
     quickSort: null,
   },
+  isMuted: false,
 };
 
 const uniques = (a) => Array.from(new Set([...a]));

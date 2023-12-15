@@ -1,5 +1,6 @@
 function selectionSort([...elements_array]) {
   const actions = [];
+  let startMicroTime = performance.now();
 
   for (var i = 0; i < elements_array.length; i++) {
     let min = i; //  storing the index of minimum element
@@ -20,5 +21,9 @@ function selectionSort([...elements_array]) {
     }
     actions.push(sortActions.sorted(i));
   }
+  let endMicroTime = performance.now();
+  configurations.executionTime.selectionSort = (
+    endMicroTime - startMicroTime
+  ).toFixed(6);
   return actions;
 }

@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidePanel = document.querySelector(".side-panel");
   const toggleBtn = document.getElementById("toggleBtn");
   const closeBtn = document.getElementById("closeBtn");
+  const soundOff = document.getElementById("sound-off");
+  const soundOn = document.getElementById("sound-on");
+
   toggleBtn.style.backgroundColor = theme_color;
   sidePanel.style.backgroundColor = theme_color;
 
@@ -22,6 +25,18 @@ document.addEventListener("DOMContentLoaded", function () {
     closeBtn.style.display = "none";
     toggleBtn.style.display = "block";
   });
+
+  soundOn.addEventListener("click", function () {
+    soundOff.style.display = "block";
+    soundOn.style.display = "none";
+    configurations.isMuted = true;
+  });
+
+  soundOff.addEventListener("click", function () {
+    soundOn.style.display = "block";
+    soundOff.style.display = "none";
+    configurations.isMuted = false;
+  });
 });
 
 /**
@@ -39,8 +54,12 @@ function animate() {
         resetSpecifiedColor("yellow");
         resetSpecifiedColor("red");
         if (i === funcs.length - 1) {
-          sortStatus.innerText = " Your complete list is sorted. Yayy!!!";
-          playAudio("finish");
+          sortStatus.style.color = custom_green;
+          sortStatus.innerHTML =
+            " Your complete list is sorted. <strong style='display:block; font-size:1.6em'>Yayy!!!</strong>";
+          if (!configurations.isMuted) {
+            playAudio("finish");
+          }
         }
       }, configurations.speed * i)
     );

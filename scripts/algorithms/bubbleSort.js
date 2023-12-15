@@ -20,9 +20,8 @@ const bubbleSort = (array) => {
     actions.push(sortActions.sorted(array.length - i - 1));
   }
   let endMicroTime = performance.now();
-  let timeRequired = (endMicroTime - startMicroTime).toFixed(6);
-  console.log(startMicroTime);
-  console.log(endMicroTime);
-  console.log("Time required------------------", timeRequired, "milliseconds");
+  configurations.executionTime.bubbleSort = (
+    endMicroTime - startMicroTime
+  ).toFixed(6);
   return actions;
 };

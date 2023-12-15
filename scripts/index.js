@@ -18,6 +18,9 @@ function visualizeBars() {
 }
 visualizeBars();
 
+const customArraySection = document.getElementById("custom-array-section");
+const randomArraySection = document.getElementById("random-array-section");
+
 document
   .getElementById("array-options")
   .addEventListener("change", function () {
@@ -100,6 +103,13 @@ const reloadButton = document.getElementById("reload-button");
 sortButton.addEventListener("click", function () {
   sortButton.style.display = "none";
   reloadButton.style.display = "block";
+  const algorithmSelection = document.getElementById("sort-algorithm");
+  const speedSelection = document.getElementById("speed-options");
+  const arrayOptionsSelection = document.getElementById("array-options");
+  const randomArraySection = document.getElementById("random-array-section");
+  const customArraySection = document.getElementById("custom-array-section");
+
+  const selectedAlgorithm = document.getElementById("sort-algorithm").value;
   const elementsToDisable = [
     algorithmSelection,
     speedSelection,
@@ -113,8 +123,6 @@ sortButton.addEventListener("click", function () {
 
   sidePanel = document.querySelector(".side-panel");
   toggleBtn.style.display = "none";
-  closeBtn.style.display = "block";
-
   sidePanel.style.left = "0";
   sidePanel.style.display = "block";
   console.log("selectedAlgorithm:", selectedAlgorithm);

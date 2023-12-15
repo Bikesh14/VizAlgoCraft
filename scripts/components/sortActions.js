@@ -35,7 +35,9 @@ const sortActionsMap = {
       lines[i].getValue() +
       " and " +
       lines[j].getValue();
-    playAudio("swap");
+    if (!configurations.isMuted) {
+      playAudio("swap");
+    }
     let tmp = lines[i].getValue();
     lines[i].setValue(lines[j].getValue(), "red");
     lines[j].setValue(tmp, "yellow");
