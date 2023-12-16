@@ -30,8 +30,6 @@ async function compareAlgorithms(elements_array) {
 
   showDisplay(".window");
   hideDisplay("#compare-btn");
-
-  // compareAlgorithmsWindow.style.display = "block";
 }
 
 async function runAlgorithmWithDelay(algorithm, elements_array, timeElementId) {

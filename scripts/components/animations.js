@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.getElementById("close-btn");
   const compareAlgoButton = document.getElementById("compare-btn");
   const winExitButton = document.querySelector(".window-exit-btn");
+  const switchMode = document.querySelector("#switch-mode-button");
 
   const soundOff = document.getElementById("sound-off");
   const soundOn = document.getElementById("sound-on");
@@ -50,6 +51,21 @@ document.addEventListener("DOMContentLoaded", function () {
     showDisplay("#compare-btn");
     showDisplay(".side-panel-button");
     hideDisplay(".window");
+  });
+
+  switchMode.addEventListener("click", function () {
+    configurations.isToggled = !configurations.isToggled;
+
+    if (configurations.isToggled) {
+      console.log(configurations.isToggled);
+      hideDisplay(".sort-section");
+      showDisplay(".pathfinder-section");
+    } else {
+      console.log(configurations.isToggled);
+
+      // document.querySelector(".sort-section").style.display = "block";
+      showDisplay(".sort-section");
+    }
   });
 });
 
