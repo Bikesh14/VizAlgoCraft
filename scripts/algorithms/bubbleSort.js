@@ -3,7 +3,7 @@
  * @param {number[]} array - The array to be sorted.
  * @returns {Object[]} - An array of sorting actions representing the steps of the algorithm.
  */
-const bubbleSort = (array) => {
+const bubbleSort = ([...array]) => {
   //Combining millisecond resolution of Date.now() with the microsecond resolution of performance.now()
   let startMicroTime = performance.now();
   let actions = [];
@@ -22,6 +22,14 @@ const bubbleSort = (array) => {
   let endMicroTime = performance.now();
   configurations.executionTime.bubbleSort = (
     endMicroTime - startMicroTime
-  ).toFixed(6);
+  ).toFixed(10);
+  console.log(
+    "time from execting side bubble SOrt",
+    configurations.executionTime.bubbleSort
+  );
+  console.log("original array--", elements_array);
+  console.log("Sorted array--", array);
+
+  return actions;
   return actions;
 };

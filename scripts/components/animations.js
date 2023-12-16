@@ -1,8 +1,11 @@
 //Side panel animation
 document.addEventListener("DOMContentLoaded", function () {
   const sidePanel = document.querySelector(".side-panel");
-  const toggleBtn = document.getElementById("toggleBtn");
-  const closeBtn = document.getElementById("closeBtn");
+  const toggleBtn = document.getElementById("toggle-btn");
+  const closeBtn = document.getElementById("close-btn");
+  const compareAlgoButton = document.getElementById("compare-algo-button");
+  const winExitButton = document.querySelector(".window-exit-btn");
+
   const soundOff = document.getElementById("sound-off");
   const soundOn = document.getElementById("sound-on");
 
@@ -36,6 +39,16 @@ document.addEventListener("DOMContentLoaded", function () {
     soundOn.style.display = "block";
     soundOff.style.display = "none";
     configurations.isMuted = false;
+  });
+
+  compareAlgoButton.addEventListener("click", function () {
+    compareAlgorithms(elements_array);
+  });
+
+  winExitButton.addEventListener("click", function () {
+    showDisplay("#visualize-canvas");
+    showDisplay(".side-panel-button");
+    hideDisplay(".window");
   });
 });
 

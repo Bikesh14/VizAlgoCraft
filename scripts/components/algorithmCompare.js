@@ -1,1 +1,0 @@
-function compareAlgorithms(array) {}

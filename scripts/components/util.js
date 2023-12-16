@@ -53,3 +53,29 @@ function playAudio(value) {
       audio.play();
   }
 }
+
+function showLoading() {
+  const loadingElement = document.getElementById("loading-wrapper");
+  loadingElement.style.display = "block";
+}
+
+function hideLoading() {
+  const loadingElement = document.getElementById("loading-wrapper");
+  loadingElement.style.display = "none";
+}
+
+function showDisplay(value) {
+  const element = document.querySelector(value);
+
+  if (element) {
+    element.style.display = "block";
+  }
+}
+
+function hideDisplay(value) {
+  const element = document.querySelector(value);
+
+  if (element) {
+    element.style.display = "none";
+  }
+}

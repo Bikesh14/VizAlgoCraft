@@ -1,6 +1,9 @@
 /**
  * Class representing a bar in a visualization.
  */
+function easeOutQuart(t) {
+  return 1 - --t * t * t * t;
+}
 class Bar {
   /**
    * Create a bar.
@@ -64,6 +67,11 @@ class Bar {
       this.value = value;
     }
   }
+  setHeight(height) {
+    if (!this.isSorted()) {
+      this.height = height;
+    }
+  }
 
   /**
    * Get the current value of the bar.
@@ -71,5 +79,8 @@ class Bar {
    */
   getValue() {
     return this.value;
+  }
+  getHeight() {
+    return this.height;
   }
 }

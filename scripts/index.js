@@ -1,5 +1,5 @@
 const canvas = document.getElementById("visualize-canvas");
-canvas.width = innerWidth / 2;
+canvas.width = innerWidth / 1.3;
 canvas.height = innerHeight / 2;
 const ctx = canvas.getContext("2d");
 let notCalledYet = true;
@@ -108,6 +108,9 @@ sortButton.addEventListener("click", function () {
   const arrayOptionsSelection = document.getElementById("array-options");
   const randomArraySection = document.getElementById("random-array-section");
   const customArraySection = document.getElementById("custom-array-section");
+  const toggleBtn = document.getElementById("toggle-btn"); //can keep them in constants file later
+  const closeBtn = document.getElementById("close-btn");
+  const compareAlgoButton = document.getElementById("compare-algo-button");
 
   const selectedAlgorithm = document.getElementById("sort-algorithm").value;
   const elementsToDisable = [
@@ -123,6 +126,8 @@ sortButton.addEventListener("click", function () {
 
   sidePanel = document.querySelector(".side-panel");
   toggleBtn.style.display = "none";
+  closeBtn.style.display = "block";
+
   sidePanel.style.left = "0";
   sidePanel.style.display = "block";
   console.log("selectedAlgorithm:", selectedAlgorithm);
@@ -147,7 +152,3 @@ sortButton.addEventListener("click", function () {
 reloadButton.addEventListener("click", function () {
   location.reload();
 });
-// function closeWindow() {
-//   // You can add additional actions here if needed
-//   window.close();
-// }
