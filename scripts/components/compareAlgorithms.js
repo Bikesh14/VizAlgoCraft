@@ -26,6 +26,8 @@ async function compareAlgorithms(elements_array) {
 
   hideDisplay("#visualize-canvas");
   hideDisplay(".side-panel-button");
+  hideDisplay(".side-panel");
+
   showDisplay(".window");
   hideDisplay("#compare-btn");
 
