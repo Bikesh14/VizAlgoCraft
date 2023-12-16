@@ -3,28 +3,36 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
-  max-width: fit-content;
 }
 
+.container {
+  margin: 0 80px;
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+}
+.smaller-screen-content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  padding: 10px;
+
+  display: none;
+  @media screen and (max-width: 400px) {
+    display: block;
+  }
+}
 .navbar {
   background-color: white;
   color: #280c0c;
-  padding: 20px;
+  /* padding: 2px 0; */
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
 
   @media screen and (max-width: 569px) {
     flex-direction: column;
-  }
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  @media screen and (max-width: 569px) {
-    margin: 10px auto;
   }
 }
 
@@ -84,6 +92,9 @@ option {
 #array-options {
   cursor: pointer;
 }
+canvas {
+  margin: 10px 10%;
+}
 .side-panel {
   position: relative;
   display: none;
@@ -91,7 +102,7 @@ option {
   width: 400px;
 
   color: #291c1c;
-  padding: 2px;
+  padding: 1px;
   transition: 1s;
 }
 .side-panel li {
@@ -99,34 +110,31 @@ option {
 }
 .side-panel-button {
   display: flex;
-  justify-content: space-around;
-  position: relative;
+  flex-wrap: wrap;
 }
 
 #toggle-btn,
 #close-btn {
+  border-radius: 2px;
   border: none;
-  /* padding: 8px; */
 }
 #close-btn {
   display: none;
 }
 
-.side-panel-button #compare-btn {
-  position: relative;
-  /* right: 2%; */
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #bb9cc0; /* Green background color */
-  color: white; /* White text color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Add border radius for rounded corners */
-  cursor: pointer; /* Add pointer cursor on hover */
+#compare-btn {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.side-panel-button #compare-btn:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
 /* Loading status  */
 
 #loading-wrapper {
@@ -333,5 +341,4 @@ th {
 .sound-on-off {
   position: relative;
   top: 10%;
-  left: 5%;
 }

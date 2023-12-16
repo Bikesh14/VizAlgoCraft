@@ -1,5 +1,5 @@
 const canvas = document.getElementById("visualize-canvas");
-canvas.width = innerWidth / 1.3;
+canvas.width = innerWidth / 1.5;
 canvas.height = innerHeight / 2;
 const ctx = canvas.getContext("2d");
 let notCalledYet = true;

@@ -27,6 +27,7 @@ async function compareAlgorithms(elements_array) {
   hideDisplay("#visualize-canvas");
   hideDisplay(".side-panel-button");
   showDisplay(".window");
+  hideDisplay("#compare-btn");
 
   // compareAlgorithmsWindow.style.display = "block";
 }

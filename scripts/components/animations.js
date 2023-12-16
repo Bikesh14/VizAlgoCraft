@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidePanel = document.querySelector(".side-panel");
   const toggleBtn = document.getElementById("toggle-btn");
   const closeBtn = document.getElementById("close-btn");
-  const compareAlgoButton = document.getElementById("compare-algo-button");
+  const compareAlgoButton = document.getElementById("compare-btn");
   const winExitButton = document.querySelector(".window-exit-btn");
 
   const soundOff = document.getElementById("sound-off");
@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   winExitButton.addEventListener("click", function () {
     showDisplay("#visualize-canvas");
+    showDisplay("#compare-btn");
     showDisplay(".side-panel-button");
     hideDisplay(".window");
   });
