@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       showDisplay(".pathfinder-section");
       showDisplay(".pathfinder-choices");
     } else {
-      // document.querySelector(".sort-section").style.display = "block";
+      showDisplay("#sort-button");
       showDisplay(".sort-choices");
       showDisplay(".side-panel-button");
       showDisplay("canvas");

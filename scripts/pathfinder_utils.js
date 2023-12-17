@@ -95,27 +95,14 @@ async function resizeFn() {
 window.onresize = resizeFn;
 
 // Wrapper function to call randomMaze
-async function generateMaze(algoName) {
+async function generateMaze() {
   if (isInProgress) {
     return;
   }
   isInProgress = true;
-  document.getElementById("resetPathBtn").innerHTML = "Stop";
-
-  if (algoName == "random") {
-    await randomMaze(randomMazeProbability).then(() => {
-      isInProgress = false;
-    });
-  } else if (algoName == "recdiv") {
-    await recursiveDivision().then(() => {
-      isInProgress = false;
-    });
-  } else if (algoName == "randomWeight") {
-    await randomWeightMaze(randomMazeProbability).then(() => {
-      isInProgress = false;
-    });
-  }
-  document.getElementById("resetPathBtn").innerHTML = "Clear Path";
+  await randomMaze(randomMazeProbability).then(() => {
+    isInProgress = false;
+  });
 }
 
 // Random Int function in range [low, high)

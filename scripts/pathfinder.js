@@ -1,3 +1,7 @@
+setSize();
+board = new Board();
+board.show();
+
 function getGridIndicesFromPos(posx, posy) {
   const rect = canvasPathfinder.getBoundingClientRect();
 
