@@ -15,11 +15,21 @@ const randomMazeProbability = 0.32;
 const weightValue = 1.5;
 
 // Colors and images
-const startImg = "src/img/start.svg";
-const endImg = "src/img/goal.svg";
+const startImg = "static/image/start.svg";
+const endImg = "static/image/goal.svg";
 
+const activeColor = "#ff304f";
+const discoveredColor = "#98FB98";
+const visitedColor = "#EDC8FE";
+const wallColor = "#343837";
+
+const weightBorder = "#02066F";
+const defaultBorder = "#247AFD";
+const defaultColor = "#f5f5f5";
+
+const pathColor = "#01F9C6";
+const pathLineColor = "#ff304f";
 const diagonals = false;
-
 let interrupt = false;
 let isInProgress = false;
 

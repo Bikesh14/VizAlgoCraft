@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Algorithm Visualization</title>
-  <link rel="stylesheet" href="styles/pathfinder_style.css" />
+  <!-- <link rel="stylesheet" href="styles/pathfinder_style.css" /> -->
   <link rel="stylesheet" href="styles/style.css" />
 
 </head>
@@ -46,7 +46,6 @@
       </div>
 
       <!-- Pathfinder Algorithm navbar choices -->
-      
       <div class="pathfinder-choices">
         <select id="sort-algorithm">
           <option value="bubble">Hello Sort</option>
@@ -94,7 +93,7 @@
       <div id="loading-content"></div>
     </div>
     <div class="sort-section">
-      <canvas id="visualize-canvas"> </canvas>
+      <canvas id="visualize-canvas" style="width: 100%; padding: 0 10px;"> </canvas>
       <audio id="sort-swap-audio">
         <source type="audio/mpeg">
       </audio>
@@ -142,8 +141,7 @@
 
     <!-- Pathfinder algorithm section -->
     <div class="pathfinder-section">
-
-      <canvas id="canvas-pathfinder"></canvas>
+      <canvas id="canvas-pathfinder" style="width: 100%; padding: 0 10px;"></canvas>
     </div>
 
   </div>
@@ -197,16 +195,28 @@
     </div>
   </div>
   <script src="scripts/constants.js"></script>
+  <script src="scripts/pathfinder_utils.js"></script>
+    <script src="scripts/class/board.js"></script>
+    <script src="scripts/class/Cell.js"></script>
+
+    <script src="scripts/constants_pathfinder.js"></script>
+
   <script src="scripts/components/config.js"></script>
   <script src="scripts/components/util.js"></script>
+
   <script src="scripts/class/bar.js"></script>
   <script src="scripts/class/canvas.js"></script>
   <script src="scripts/components/sortActions.js"></script>
   <script src="scripts/algorithms/bubbleSort.js"></script>
   <script src="scripts/algorithms/selectionSort.js"></script>
   <script src="scripts/algorithms/quickSort.js"></script>
+  <script src="scripts/algorithms/aStar.js"></script>
+  <script src="scripts/algorithms/dijkstra.js"></script>
+
   <script src="scripts/components/compareAlgorithms.js"></script>
   <script src="scripts/components/animations.js"></script>
+  <script src="scripts/events.js"></script>
+
   <script src="scripts/index.js"></script>
 </body>
 
