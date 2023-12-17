@@ -17,6 +17,16 @@ async function pathfinder() {
     await dijkstra().then(() => {
       isInProgress = false;
     });
+  } else if (algoName == "breadth") {
+    await board.resetWeights();
+    await breadthFirstSearch().then(() => {
+      isInProgress = false;
+    });
+  } else if (algoName == "depth") {
+    await board.resetWeights();
+    await depthFirstSearch().then(() => {
+      isInProgress = false;
+    });
   }
 }
 
