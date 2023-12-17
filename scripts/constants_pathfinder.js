@@ -29,7 +29,6 @@ const defaultColor = "#f5f5f5";
 
 const pathColor = "#01F9C6";
 const pathLineColor = "#ff304f";
-const diagonals = false;
 let interrupt = false;
 let isInProgress = false;
 

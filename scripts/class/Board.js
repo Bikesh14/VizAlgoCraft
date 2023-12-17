@@ -104,7 +104,6 @@ class Board {
     this.grid[y][x].toggleWall();
     this.grid[y][x].show();
   }
-
   // Returns the neighbors of a cell
   getNeighbors(cell) {
     let i = cell.y;
@@ -122,20 +121,6 @@ class Board {
     }
     if (j > 0) {
       neighbors.push([i, j - 1]);
-    }
-    if (diagonals) {
-      if (i != 0 && j != this.cols - 1) {
-        neighbors.push([i - 1, j + 1]);
-      }
-      if (i != this.rows - 1 && j != this.cols - 1) {
-        neighbors.push([i + 1, j + 1]);
-      }
-      if (i != 0 && j != 0) {
-        neighbors.push([i - 1, j - 1]);
-      }
-      if (i != this.rows - 1 && j != 0) {
-        neighbors.push([i + 1, j - 1]);
-      }
     }
 
     return neighbors;

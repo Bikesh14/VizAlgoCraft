@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
     configurations.isToggled = !configurations.isToggled;
 
     if (configurations.isToggled) {
+      hideDisplay("#sort-button");
+      hideDisplay(".sound-on-off");
       hideDisplay(".sort-choices");
       hideDisplay(".side-panel-button");
       hideDisplay("canvas");
