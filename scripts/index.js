@@ -16,8 +16,15 @@ function visualizeBars() {
   let timers = [];
   lines.forEach((l) => l.draw(ctx));
 }
-visualizeBars();
 
+hideDisplay(".sort-section");
+showLoading();
+setTimeout(function () {
+  showDisplay(".sort-section");
+  visualizeBars(); // Call your function after 5 seconds
+  hideLoading(); // Hide loading screen after your function is done
+}, 1500);
+// wait for 1 second
 const customArraySection = document.getElementById("custom-array-section");
 const randomArraySection = document.getElementById("random-array-section");
 

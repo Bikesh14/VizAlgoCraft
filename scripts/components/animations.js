@@ -57,14 +57,18 @@ document.addEventListener("DOMContentLoaded", function () {
     configurations.isToggled = !configurations.isToggled;
 
     if (configurations.isToggled) {
-      console.log(configurations.isToggled);
-      hideDisplay(".sort-section");
+      hideDisplay(".sort-choices");
+      hideDisplay(".side-panel-button");
+      hideDisplay("canvas");
       showDisplay(".pathfinder-section");
+      showDisplay(".pathfinder-choices");
     } else {
-      console.log(configurations.isToggled);
-
       // document.querySelector(".sort-section").style.display = "block";
-      showDisplay(".sort-section");
+      showDisplay(".sort-choices");
+      showDisplay(".side-panel-button");
+      showDisplay("canvas");
+      hideDisplay(".pathfinder-section");
+      hideDisplay(".pathfinder-choices");
     }
   });
 });

@@ -24,12 +24,11 @@ body {
 }
 .navbar {
   background-color: white;
+  flex-wrap: wrap;
   color: #280c0c;
-  /* padding: 2px 0; */
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 24px;
 
   @media screen and (max-width: 569px) {
     flex-direction: column;
@@ -38,6 +37,7 @@ body {
 .sort-choices {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-left: 50px;
   gap: 20px;
   @media screen and (max-width: 569px) {
@@ -45,7 +45,18 @@ body {
     margin: 0 auto;
   }
 }
-
+.pathfinder-choices {
+  margin-left: 100px;
+  display: none;
+  justify-content: space-around;
+  /* width: 60%; */
+  margin-left: 50px;
+  gap: 80px;
+  @media screen and (max-width: 569px) {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+}
 select,
 input {
   padding: 6px;
@@ -82,8 +93,18 @@ option {
   width: 140px;
 }
 
+#sort-button,
+#reload-button {
+  padding-left: 10px;
+  cursor: pointer;
+}
 #reload-button {
   display: none;
+}
+#sort-button:hover,
+#reload-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 #sort-algorithm,
@@ -134,6 +155,11 @@ canvas {
   cursor: pointer;
 }
 
+#compare-btn:hover {
+  /* transform: translateY(-5px); */
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
 /* Loading status  */
 
 #loading-wrapper {
@@ -327,7 +353,13 @@ th {
 
 .sound-on-off {
   position: relative;
+  cursor: pointer;
   top: 10%;
+}
+
+#sound-on-off:hover {
+  transform: scale(1.9);
+  transition: transform 0.3s ease;
 }
 
 /* CSS for Toggle */
@@ -351,4 +383,9 @@ th {
 #switch-mode-button:hover {
   background-color: #84417c;
   color: white;
+}
+
+/* CSS from Pathfinder algorithm section */
+.pathfinder-section {
+  display: none;
 }

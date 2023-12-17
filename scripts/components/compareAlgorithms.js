@@ -38,7 +38,7 @@ async function runAlgorithmWithDelay(algorithm, elements_array, timeElementId) {
   let endMicroTime = performance.now();
   configurations.executionTime[algorithm.name] = (
     endMicroTime - startMicroTime
-  ).toFixed(10);
+  ).toFixed(14);
 
   // Update the time element
   const timeElement = document.getElementById(timeElementId);
