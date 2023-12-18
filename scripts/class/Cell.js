@@ -33,7 +33,7 @@ class Cell {
   async discoverNode(parent) {
     this.hasBeenDiscovered = true;
     this.parent = parent;
-    this.show(activeColor);
+    this.show(custom_alert_color);
     sleep(2500 / fps).then(() => {
       this.show(discoveredColor);
     });
@@ -75,7 +75,7 @@ class Cell {
       };
       return;
     } else if (this.isWall) {
-      context.fillStyle = wallColor;
+      context.fillStyle = custom_black;
     } else if (color) {
       context.fillStyle = color;
     } else if (this.hasBeenDiscovered) {
@@ -99,7 +99,7 @@ class Cell {
   async drawPathLine(prev) {
     //line width of final path mapper
     context.lineWidth = 4;
-    context.strokeStyle = pathLineColor;
+    context.strokeStyle = custom_green;
     let beginX = this.x * scale + scale / 2;
     let beginY = this.y * scale + scale / 2;
     let endX = prev.x * scale + scale / 2;

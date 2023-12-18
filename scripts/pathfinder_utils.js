@@ -54,7 +54,7 @@ async function drawPath() {
   path.unshift(board.start);
 
   for (let i = 1; i < path.length && !interrupt; i++) {
-    await path[i].show(pathColor);
+    await path[i].show(custom_orange);
 
     // draw a path from this to prev
     await path[i].drawPathLine(path[i - 1]);

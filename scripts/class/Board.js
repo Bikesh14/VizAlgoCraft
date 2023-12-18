@@ -13,16 +13,17 @@ class Board {
       this.grid.push(row);
     }
 
-    // start and goal indices
-    let Y = parseInt(this.rows / 2);
-    let X1 = parseInt(this.cols / 4);
-    let X2 = parseInt((3 * this.cols) / 4);
+    // start and goal positions
+    let Y1 = 1;
+    let Y2 = parseInt(this.rows - 2);
+    let X1 = 1;
+    let X2 = parseInt(this.cols - 2);
 
-    this.grid[Y][X1].start = true;
-    this.grid[Y][X2].goal = true;
+    this.grid[Y1][X1].start = true;
+    this.grid[Y2][X2].goal = true;
 
-    this.start = this.grid[Y][X1];
-    this.goal = this.grid[Y][X2];
+    this.start = this.grid[Y1][X1];
+    this.goal = this.grid[Y2][X2];
   }
 
   // Display all cells
@@ -80,21 +81,6 @@ class Board {
     this.grid[y][x].weight = Infinity;
     this.grid[y][x].show();
   }
-
-  //   addWeight(x, y) {
-  //     if (y >= this.rows || x >= this.cols || y < 0 || x < 0) {
-  //       return;
-  //     }
-  //     if (
-  //       this.grid[y][x].start == true ||
-  //       this.grid[y][x].goal == true ||
-  //       this.grid[y][x].isWall == true
-  //     ) {
-  //       return;
-  //     }
-  //     this.grid[y][x].weight = weightValue;
-  //     this.grid[y][x].show();
-  //   }
 
   // Toggle isWall at particular index
   toggleWall(x, y) {

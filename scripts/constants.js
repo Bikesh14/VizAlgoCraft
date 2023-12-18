@@ -11,34 +11,21 @@ const custom_alert_color = "#ff4545";
 // from pathfinding visualization
 const widthRatio = 0.95;
 const heightRatio = 0.9;
-
 const fps = 75;
 let scale = 25;
 let offset = 2.5;
-
 const canvasPathfinder = document.getElementById("canvas-pathfinder");
 const context = canvasPathfinder.getContext("2d");
-
 let width, height;
 let board;
-
 const randomMazeProbability = 0.32;
 const weightValue = 1.5;
-
 // Colors and images
 const startImg = "static/image/start.svg";
 const endImg = "static/image/goal.svg";
-
-const activeColor = "#ff304f";
-const discoveredColor = "#98FB98";
-const visitedColor = "#EDC8FE";
-const wallColor = "#343837";
-
-const weightBorder = "#02066F";
-const defaultBorder = "#247AFD";
-const defaultColor = "#f5f5f5";
-
-const pathColor = "#01F9C6";
-const pathLineColor = "#ff304f";
+const discoveredColor = custom_green;
+const visitedColor = theme_color;
+const defaultBorder = theme_color;
+const defaultColor = "rgba(187, 156, 192, 0.4)";
 let interrupt = false;
 let isInProgress = false;
