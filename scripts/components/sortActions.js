@@ -25,13 +25,13 @@ const sortActionsMap = {
   swap: (action) => {
     const [i, j] = action.index;
     sortStatus.innerHTML =
-      "<br>Swap Action: array[" +
+      "<br><strong>Swapping:</strong> array[" +
       (i + 1) +
       "]+ " +
       "array[" +
       (j + 1) +
       "] <br>" +
-      "Swapping values " +
+      "comparing values " +
       lines[i].getValue() +
       " and " +
       lines[j].getValue();
@@ -39,8 +39,8 @@ const sortActionsMap = {
       playAudio("swap");
     }
     let tmp = lines[i].getValue();
-    lines[i].setValue(lines[j].getValue(), "red");
-    lines[j].setValue(tmp, "yellow");
+    lines[i].setValue(lines[j].getValue(), custom_orange);
+    lines[j].setValue(tmp, custom_yellow);
   },
 
   /**
@@ -50,7 +50,7 @@ const sortActionsMap = {
   comparing: (action) => {
     const [i, j] = action.index;
     sortStatus.innerHTML =
-      "<br>Swap Action: array[" +
+      "<br><strong>Comparing:</strong> array[" +
       (i + 1) +
       "]+ " +
       "array[" +
@@ -62,10 +62,10 @@ const sortActionsMap = {
       lines[j].getValue();
     numberOfCompares.innerText = 1 + Number(numberOfCompares.innerText);
     if (lines[i].color !== custom_green && lines[i].color !== custom_pivot) {
-      lines[i].color = "blue";
+      lines[i].color = custom_blue;
     }
     if (lines[j].color !== custom_green && lines[j].color !== custom_pivot) {
-      lines[j].color = "blue";
+      lines[j].color = custom_blue;
     }
   },
 

@@ -54,7 +54,7 @@
 // const canvas = document.getElementById("myCanvas");
 // const ctx = canvas.getContext("2d");
 
-// const rectangle1 = new Rectangle(10, 50, 50, 5, "blue");
+// const rectangle1 = new Rectangle(10, 50, 50, 5, custom_blue);
 // const rectangle2 = new Rectangle(100, 50, 50, 8, "green");
 
 // rectangle1.animateBar(ctx, rectangle1.x + 100, 1000); // Move the first

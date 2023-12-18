@@ -38,7 +38,7 @@ const calcLineHeightMultiplier = (elements) => {
  */
 const resetSpecifiedColor = (color) =>
   lines.forEach(
-    (l) => (l.color === color || l.color === "blue") && l.resetColor() //if case=True, execute resetColor() and revert to original color
+    (l) => (l.color === color || l.color === custom_blue) && l.resetColor() //if case=True, execute resetColor() and revert to original color
   );
 
 function playAudio(value) {

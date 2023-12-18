@@ -87,8 +87,8 @@ function animate() {
         console.log(action); //printing what action is being performed at the time in console
         sortActionsMap[action.type](action);
         lines.forEach((l) => l.draw(ctx));
-        resetSpecifiedColor("yellow");
-        resetSpecifiedColor("red");
+        resetSpecifiedColor(custom_yellow);
+        resetSpecifiedColor(custom_orange);
         if (i === funcs.length - 1) {
           sortStatus.style.color = custom_green;
           sortStatus.innerHTML =
