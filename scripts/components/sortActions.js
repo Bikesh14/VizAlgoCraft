@@ -13,7 +13,7 @@ const sortActionsMap = {
   sorted: (action) => {
     const i = action.index;
     sortStatus.style.color = custom_green;
-    sortStatus.innerText = lines[i].getValue() + " is sorted.";
+    sortStatus.innerHTML = "<br>" + lines[i].getValue() + " is sorted &#9989;";
     lines[i].color = custom_green;
     sortStatus.style.color = custom_black;
   },
@@ -27,11 +27,11 @@ const sortActionsMap = {
     sortStatus.innerHTML =
       "<br><strong>Swapping:</strong> array[" +
       (i + 1) +
-      "]+ " +
+      "] and " +
       "array[" +
       (j + 1) +
       "] <br>" +
-      "comparing values " +
+      "Swapping values " +
       lines[i].getValue() +
       " and " +
       lines[j].getValue();
@@ -52,7 +52,7 @@ const sortActionsMap = {
     sortStatus.innerHTML =
       "<br><strong>Comparing:</strong> array[" +
       (i + 1) +
-      "]+ " +
+      "] and " +
       "array[" +
       (j + 1) +
       "] <br>" +

@@ -18,12 +18,10 @@ async function pathfinder() {
       isInProgress = false;
     });
   } else if (algoName == "breadth") {
-    await board.resetWeights();
     await breadthFirstSearch().then(() => {
       isInProgress = false;
     });
   } else if (algoName == "depth") {
-    await board.resetWeights();
     await depthFirstSearch().then(() => {
       isInProgress = false;
     });
@@ -109,3 +107,39 @@ async function generateMaze() {
 function randInt(low, high) {
   return Math.floor(Math.random() * (high - low)) + low;
 }
+
+// to keep track of if the mouse is dragged
+let mouseDragging = false;
+canvasPathfinder.addEventListener("mousedown", (event) => {
+  if (isInProgress) {
+    return;
+  }
+  mouseDragging = true;
+});
+
+canvasPathfinder.addEventListener("mousemove", (event) => {
+  if (isInProgress || !mouseDragging) {
+    return;
+  }
+  let indices = getGridIndicesFromPos(event.clientX, event.clientY);
+  if (indices) {
+    board.addWall(indices.x, indices.y);
+  }
+});
+
+canvasPathfinder.addEventListener("mouseup", (event) => {
+  if (isInProgress) {
+    return;
+  }
+  mouseDragging = false;
+});
+
+canvasPathfinder.addEventListener("click", () => {
+  if (isInProgress) {
+    return;
+  }
+  let indices = getGridIndicesFromPos(event.clientX, event.clientY);
+  if (indices) {
+    board.toggleWall(indices.x, indices.y);
+  }
+});

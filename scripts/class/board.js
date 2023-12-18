@@ -11,7 +11,7 @@
 
 class Board {
   constructor() {
-    this.rows = parseInt(height / scale);
+    this.rows = parseInt(height / scale - 1);
     this.cols = parseInt(width / scale);
     this.grid = [];
     this.heuristics = false;
@@ -51,17 +51,6 @@ class Board {
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.cols; j++) {
         this.grid[i][j].isWall = false;
-        this.grid[i][j].hasBeenDiscovered = false;
-        this.grid[i][j].parent = false;
-        this.grid[i][j].weight = 0;
-      }
-    }
-    this.show();
-  }
-
-  async resetWeights() {
-    for (let i = 0; i < this.rows; i++) {
-      for (let j = 0; j < this.cols; j++) {
         this.grid[i][j].hasBeenDiscovered = false;
         this.grid[i][j].parent = false;
         this.grid[i][j].weight = 0;

@@ -31,12 +31,5 @@ const selectionSort = ([...array]) => {
   configurations.executionTime.selectionSort = (
     endMicroTime - startMicroTime
   ).toFixed(10);
-  console.log(
-    "time from execting side selection SOrt",
-    configurations.executionTime.selectionSort
-  );
-  console.log("original array--", elements_array);
-  console.log("Sorted array--", array);
-  return actions;
   return actions;
 };

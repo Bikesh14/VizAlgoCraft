@@ -30,6 +30,7 @@ async function compareAlgorithms(elements_array) {
   showDisplay(".window");
   hideDisplay("#compare-btn");
   hideDisplay(".navbar");
+  hideDisplay(".sound-on-off");
 }
 
 async function runAlgorithmWithDelay(algorithm, elements_array, timeElementId) {
@@ -45,7 +46,6 @@ async function runAlgorithmWithDelay(algorithm, elements_array, timeElementId) {
   if (timeElement) {
     timeElement.innerText = configurations.executionTime[algorithm.name];
   }
-
   // Introduce a 1-second delay between algorithms
   await sleep(1000);
 }

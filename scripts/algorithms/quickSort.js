@@ -77,11 +77,5 @@ const quickSortActions = ([...array]) => {
   configurations.executionTime.quickSort = (
     endMicroTime - startMicroTime
   ).toFixed(10);
-  console.log(
-    "time from execting side Quick SOrt",
-    configurations.executionTime.quickSort
-  );
-  console.log("original array--", elements_array);
-  console.log("Sorted array--", array);
   return actions;
 };

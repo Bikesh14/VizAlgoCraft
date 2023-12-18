@@ -20,10 +20,9 @@ hideDisplay(".sort-section");
 showLoading();
 setTimeout(function () {
   showDisplay(".sort-section");
-  visualizeBars(); // Call your function after 5 seconds
+  visualizeBars(); // Call the function after 5 seconds
   hideLoading(); // Hide loading screen after your function is done
-}, 1500);
-// wait for 1 second
+}, 1000); // wait for 1 second
 
 document
   .getElementById("array-options")
@@ -42,10 +41,9 @@ document
   .getElementById("speed-options")
   .addEventListener("change", function () {
     const selectedOption = this.value;
-    console.log("Speed", selectedOption);
     switch (selectedOption) {
       case "fast":
-        configurations.speed = 200;
+        configurations.speed = 150;
         break;
       case "medium":
         configurations.speed = 400;
@@ -54,7 +52,7 @@ document
         configurations.speed = 800;
         break;
       case "very-slow":
-        configurations.speed = 1600;
+        configurations.speed = 1800;
         break;
     }
   });
@@ -91,11 +89,9 @@ const elementsCountSlider = document.getElementById("elements-count");
 let timeoutNew;
 elementsCountSlider.addEventListener("input", function () {
   configurations.number_of_elements = parseInt(this.value, 10);
-  console.log("check?", configurations.number_of_elements);
 
   // Generate a random array with the specified number of elements
   elements_array = randomArrayGenerator(configurations.number_of_elements);
-  console.log("Updated?", elements_array);
   visualizeBars();
 });
 
@@ -109,6 +105,7 @@ sortButton.addEventListener("click", function () {
   const arrayOptionsSelection = document.getElementById("array-options");
   const randomArraySection = document.getElementById("random-array-section");
   const customArraySection = document.getElementById("custom-array-section");
+  const switchModeButton = document.getElementById("switch-mode-button");
 
   const selectedAlgorithm = document.getElementById("sort-algorithm").value;
   const elementsToDisable = [
@@ -117,6 +114,7 @@ sortButton.addEventListener("click", function () {
     arrayOptionsSelection,
     randomArraySection,
     customArraySection,
+    switchModeButton,
   ];
   elementsToDisable.forEach((element) => {
     element.style.pointerEvents = "none";

@@ -56,22 +56,20 @@ function playAudio(value) {
 
 //show Loading.... animation
 function showLoading() {
-  const loadingElement = document.getElementById("loading-wrapper");
-  loadingElement.style.display = "block";
+  showDisplay("#loading-wrapper");
 }
 
 //Hide Loading.... animation
 function hideLoading() {
-  const loadingElement = document.getElementById("loading-wrapper");
-  loadingElement.style.display = "none";
+  hideDisplay("#loading-wrapper");
 }
 
 // customized function to set Display property ="block" to DOM
-function showDisplay(value) {
+function showDisplay(value, type = "block") {
   const element = document.querySelector(value);
 
   if (element) {
-    element.style.display = "block";
+    element.style.display = type;
   }
 }
 

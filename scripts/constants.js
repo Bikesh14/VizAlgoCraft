@@ -1,6 +1,5 @@
 const custom_green = "#408C7D";
 const theme_color = "#BB9CC0";
-const custom_white = "#F8F4E3";
 const custom_black = "#1E3050";
 const custom_pivot = "#6C7C59";
 const custom_blue = "#67729D";
@@ -12,7 +11,7 @@ const customArraySection = document.getElementById("custom-array-section");
 const randomArraySection = document.getElementById("random-array-section");
 const sortButton = document.getElementById("sort-button");
 const reloadButton = document.getElementById("reload-button");
-const toggleBtn = document.getElementById("toggle-btn"); //can keep them in constants file later
+const toggleBtn = document.getElementById("toggle-btn");
 const closeBtn = document.getElementById("close-btn");
 
 // from pathfinding visualization
@@ -33,6 +32,6 @@ const endImg = "static/image/goal.svg";
 const discoveredColor = custom_green;
 const visitedColor = theme_color;
 const defaultBorder = theme_color;
-const defaultColor = "rgba(187, 156, 192, 0.4)";
+const defaultColor = "#f1ebf2";
 let interrupt = false;
 let isInProgress = false;

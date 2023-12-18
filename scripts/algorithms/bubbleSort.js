@@ -23,13 +23,5 @@ const bubbleSort = ([...array]) => {
   configurations.executionTime.bubbleSort = (
     endMicroTime - startMicroTime
   ).toFixed(10);
-  console.log(
-    "time from execting side bubble SOrt",
-    configurations.executionTime.bubbleSort
-  );
-  console.log("original array--", elements_array);
-  console.log("Sorted array--", array);
-
-  return actions;
   return actions;
 };
