@@ -1,3 +1,16 @@
+/**
+ * Represents a cell on the game board for pathfinding visualization.
+ * @constructor
+ * @property {number} x - The x-coordinate of the cell.
+ * @property {number} y - The y-coordinate of the cell.
+ * @property {boolean} isWall - Flag indicating whether the cell is a wall.
+ * @property {boolean} hasBeenDiscovered - Flag indicating whether the cell has been discovered during search.
+ * @property {Cell} parent - The parent cell from which the current cell was discovered.
+ * @property {number} weight - The weight of the cell, used in algorithms.
+ * @property {boolean} start - Flag indicating whether the cell is the start position.
+ * @property {boolean} goal - Flag indicating whether the cell is the goal position.
+ */
+
 class Cell {
   constructor(x, y) {
     this.x = x;

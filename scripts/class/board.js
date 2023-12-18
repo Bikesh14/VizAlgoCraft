@@ -1,3 +1,14 @@
+/**
+ * Represents the game board for pathfinding visualization.
+ * @constructor
+ * @property {number} rows - The number of rows on the board.
+ * @property {number} cols - The number of columns on the board.
+ * @property {Cell[][]} grid - 2D array representing the grid of cells on the board.
+ * @property {boolean} heuristics - Flag indicating whether heuristics have been initialized.
+ * @property {Cell} start - The starting cell on the board.
+ * @property {Cell} goal - The goal cell on the board.
+ */
+
 class Board {
   constructor() {
     this.rows = parseInt(height / scale);
