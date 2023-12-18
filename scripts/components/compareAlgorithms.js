@@ -27,9 +27,9 @@ async function compareAlgorithms(elements_array) {
   hideDisplay("#visualize-canvas");
   hideDisplay(".side-panel-button");
   hideDisplay(".side-panel");
-
   showDisplay(".window");
   hideDisplay("#compare-btn");
+  hideDisplay(".navbar");
 }
 
 async function runAlgorithmWithDelay(algorithm, elements_array, timeElementId) {

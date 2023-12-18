@@ -48,15 +48,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   winExitButton.addEventListener("click", function () {
     showDisplay("#visualize-canvas");
-    showDisplay("#compare-btn");
     showDisplay(".side-panel-button");
+    showDisplay("#compare-btn");
+    showDisplay(".navbar");
+    showDisplay(".side-panel");
     hideDisplay(".window");
+    showDisplay(".navbar");
   });
 
   switchMode.addEventListener("click", function () {
     configurations.isToggled = !configurations.isToggled;
 
     if (configurations.isToggled) {
+      hideDisplay("#compare-btn");
+      hideDisplay(".window");
       hideDisplay("#sort-button");
       hideDisplay(".sound-on-off");
       hideDisplay(".sort-choices");
@@ -65,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
       showDisplay(".pathfinder-section");
       showDisplay(".pathfinder-choices");
     } else {
+      hideDisplay(".window");
       showDisplay("#sort-button");
       showDisplay(".sort-choices");
       showDisplay(".side-panel-button");
