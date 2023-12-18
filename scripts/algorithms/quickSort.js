@@ -1,3 +1,9 @@
+/**
+ * Performs the quick sort algorithm on a copy of the given array and generates sorting actions.
+ *
+ * @param {number[]} array - The array to be sorted.
+ * @returns {Object[]} - An array of sorting actions representing the steps of the algorithm.
+ */
 const quickSortActions = ([...array]) => {
   const actions = [];
 
@@ -34,6 +40,14 @@ const quickSortActions = ([...array]) => {
 
     return i;
   }
+
+  /**
+   * Recursively performs quick sort on the array and records sorting actions.
+   *
+   * @param {number[]} items - The array to be sorted.
+   * @param {number} left - The left index of the partition.
+   * @param {number} right - The right index of the partition.
+   */
 
   function quickSort(items, left, right) {
     let index;

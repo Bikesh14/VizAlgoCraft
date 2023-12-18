@@ -1,4 +1,9 @@
-// helper function to insert node into priority queue
+/**
+ * Inserts a node into the priority queue used in A* Search based on the combined cost (gScore + hScore + weight).
+ * The insertion maintains the order of nodes in the priority queue.
+ * @param {Object[]} priorityQueue - The priority queue to insert the node into.
+ * @param {Object} node - The node to be inserted into the priority queue.
+ */
 async function insertPriorityQueueAStar(priorityQueue, node) {
   for (let i = 0; i < priorityQueue.length; i++) {
     if (
@@ -14,6 +19,11 @@ async function insertPriorityQueueAStar(priorityQueue, node) {
   priorityQueue.push(node);
 }
 
+/**
+ * Performs A* Search algorithm to find the shortest path from the start to the goal node.
+ * Uses a priority queue based on the combined cost (gScore + hScore + weight) to explore nodes.
+ * The algorithm stops when the goal is reached or all nodes are explored.
+ */
 async function aStarSearch() {
   let priorityQueue = [board.start];
   board.start.hasBeenDiscovered = true;

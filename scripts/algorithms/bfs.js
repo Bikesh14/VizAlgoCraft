@@ -1,3 +1,8 @@
+/**
+ * Performs Breadth-First Search algorithm to find a path from the start to the goal node.
+ * Uses a queue to explore nodes in layers, ensuring the shortest path is found first.
+ * The algorithm stops when the goal is reached or all nodes are explored.
+ */
 async function breadthFirstSearch() {
   let Queue = [board.start];
   board.start.hasBeenDiscovered = true;

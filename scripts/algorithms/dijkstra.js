@@ -1,4 +1,9 @@
-// helper function to insert node into priority queue for dijkstra
+/**
+ * Inserts a node into the priority queue for Dijkstra's algorithm.
+ *
+ * @param {Object[]} priorityQueue - The priority queue containing nodes to be traversed.
+ * @param {Object} node - The node to be inserted into the priority queue.
+ */
 async function insertpriorityQueueDijkstra(priorityQueue, node) {
   for (let i = 0; i < priorityQueue.length; i++) {
     if (
@@ -12,6 +17,10 @@ async function insertpriorityQueueDijkstra(priorityQueue, node) {
   priorityQueue.push(node);
 }
 
+/**
+ * Performs Dijkstra's algorithm to find the shortest path on the board.
+ * Traverses nodes and discovers the optimal path from the start to the goal node.
+ */
 async function dijkstra() {
   let priorityQueue = [board.start];
   board.start.hasBeenDiscovered = true;

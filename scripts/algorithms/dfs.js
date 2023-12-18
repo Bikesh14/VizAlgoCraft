@@ -1,3 +1,8 @@
+/**
+ * Performs Depth-First Search algorithm to find a path from the start to the goal node.
+ * Uses a stack to explore nodes and backtracks when necessary.
+ * The algorithm stops when the goal is reached or all nodes are explored.
+ */
 async function depthFirstSearch() {
   let Stack = [board.start];
   board.goal.hasBeenDiscovered = false;

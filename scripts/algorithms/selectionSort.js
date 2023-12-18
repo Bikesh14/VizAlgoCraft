@@ -1,3 +1,9 @@
+/**
+ * Performs the selection sort algorithm on a copy of the given array and generates sorting actions.
+ *
+ * @param {number[]} array - The array to be sorted.
+ * @returns {Object[]} - An array of sorting actions representing the steps of the algorithm.
+ */
 const selectionSort = ([...array]) => {
   const actions = [];
   let startMicroTime = performance.now();
