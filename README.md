@@ -2,12 +2,16 @@
 
 This project provides a visual representation of various sorting algorithms and pathfinding algorithms. Users can interact with the visualization to understand the workings of these algorithms.
 
+hosted at: https://bikesh14.github.io/VizAlgoCraft/
+
 ## Table of Contents
 
 - [Sorting Algorithms](#sorting-algorithms)
 - [Pathfinding Algorithms](#pathfinding-algorithms)
 - [Usage](#usage)
 - [Features](#features)
+- [Screenshots](#screenshots)
+
 - [Built With](#built-with)
 - [Contributing](#contributing)
 - [License](#license)
