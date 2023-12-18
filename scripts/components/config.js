@@ -1,6 +1,7 @@
+//configurations for Sort visualization
 const configurations = {
   algorithm: "",
-  number_of_elements: 15,
+  number_of_elements: 10,
   speed: 400,
   start: false,
   totalAnimationTime: null,

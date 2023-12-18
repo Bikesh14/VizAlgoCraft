@@ -7,6 +7,13 @@ const custom_blue = "#67729D";
 const custom_yellow = "#ffdf00";
 const custom_orange = "#cc7722";
 const custom_alert_color = "#ff4545";
+const canvas = document.getElementById("visualize-canvas");
+const customArraySection = document.getElementById("custom-array-section");
+const randomArraySection = document.getElementById("random-array-section");
+const sortButton = document.getElementById("sort-button");
+const reloadButton = document.getElementById("reload-button");
+const toggleBtn = document.getElementById("toggle-btn"); //can keep them in constants file later
+const closeBtn = document.getElementById("close-btn");
 
 // from pathfinding visualization
 const widthRatio = 0.95;

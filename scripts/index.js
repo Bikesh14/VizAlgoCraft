@@ -1,4 +1,3 @@
-const canvas = document.getElementById("visualize-canvas");
 canvas.width = innerWidth / 1.5;
 canvas.height = innerHeight / 2;
 const ctx = canvas.getContext("2d");
@@ -25,8 +24,6 @@ setTimeout(function () {
   hideLoading(); // Hide loading screen after your function is done
 }, 1500);
 // wait for 1 second
-const customArraySection = document.getElementById("custom-array-section");
-const randomArraySection = document.getElementById("random-array-section");
 
 document
   .getElementById("array-options")
@@ -41,7 +38,6 @@ document
     }
   });
 
-// const speedSelection = document.getElementById("custom-array-section");
 document
   .getElementById("speed-options")
   .addEventListener("change", function () {
@@ -104,8 +100,6 @@ elementsCountSlider.addEventListener("input", function () {
 });
 
 let timers = [];
-const sortButton = document.getElementById("sort-button");
-const reloadButton = document.getElementById("reload-button");
 
 sortButton.addEventListener("click", function () {
   sortButton.style.display = "none";
@@ -115,9 +109,6 @@ sortButton.addEventListener("click", function () {
   const arrayOptionsSelection = document.getElementById("array-options");
   const randomArraySection = document.getElementById("random-array-section");
   const customArraySection = document.getElementById("custom-array-section");
-  const toggleBtn = document.getElementById("toggle-btn"); //can keep them in constants file later
-  const closeBtn = document.getElementById("close-btn");
-  const compareAlgoButton = document.getElementById("compare-algo-button");
 
   const selectedAlgorithm = document.getElementById("sort-algorithm").value;
   const elementsToDisable = [

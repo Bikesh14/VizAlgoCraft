@@ -54,16 +54,19 @@ function playAudio(value) {
   }
 }
 
+//show Loading.... animation
 function showLoading() {
   const loadingElement = document.getElementById("loading-wrapper");
   loadingElement.style.display = "block";
 }
 
+//Hide Loading.... animation
 function hideLoading() {
   const loadingElement = document.getElementById("loading-wrapper");
   loadingElement.style.display = "none";
 }
 
+// customized function to set Display property ="block" to DOM
 function showDisplay(value) {
   const element = document.querySelector(value);
 
@@ -72,6 +75,7 @@ function showDisplay(value) {
   }
 }
 
+// customized function to set Display property ="none" to DOM
 function hideDisplay(value) {
   const element = document.querySelector(value);
 
