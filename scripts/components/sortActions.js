@@ -75,7 +75,10 @@ const sortActionsMap = {
    */
   pivot: (action) => {
     const i = action.index;
-    sortStatus.innerText = "Setting pivot: " + lines[i].getValue();
+    sortStatus.innerHTML =
+      "<strong>Setting </strong>" +
+      lines[i].getValue() +
+      " <strong> as pivot </strong>";
     lines[i].color = custom_pivot;
   },
 };

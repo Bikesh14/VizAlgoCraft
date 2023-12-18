@@ -1,7 +1,7 @@
 const configurations = {
   algorithm: "",
   number_of_elements: 15,
-  speed: 200,
+  speed: 400,
   start: false,
   totalAnimationTime: null,
   executionTime: {
