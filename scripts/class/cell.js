@@ -83,7 +83,7 @@ class Cell {
         context.clearRect(this.x * scale, this.y * scale, scale, scale);
         context.drawImage(
           image,
-          this.x * scale + 2,
+          this.x * scale + 2, //adjusting as per the image size, +2 instead of adding offset
           this.y * scale + 2,
           scale - 2,
           scale - 2

@@ -1,6 +1,5 @@
-canvas.width = innerWidth / 1.5;
+canvas.width = innerWidth;
 canvas.height = innerHeight / 2;
-const ctx = canvas.getContext("2d");
 let notCalledYet = true;
 const numberOfCompares = document.getElementById("compare-count");
 const sortStatus = document.getElementById("sort-status");
@@ -23,7 +22,7 @@ setTimeout(function () {
   showDisplay(".sort-section");
   visualizeBars(); // Call the function after 1 second
   hideLoading(); // Hide loading screen after your function is done
-}, 1000);
+}, 100);
 
 document
   .getElementById("array-options")

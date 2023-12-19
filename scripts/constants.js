@@ -6,7 +6,9 @@ const custom_blue = "#67729D";
 const custom_yellow = "#ffdf00";
 const custom_orange = "#cc7722";
 const custom_alert_color = "#ff4545";
+const canvasVerticalOffset = 30;
 const canvas = document.getElementById("visualize-canvas");
+const ctx = canvas.getContext("2d");
 const customArraySection = document.getElementById("custom-array-section");
 const randomArraySection = document.getElementById("random-array-section");
 const sortButton = document.getElementById("sort-button");
@@ -15,8 +17,8 @@ const toggleBtn = document.getElementById("toggle-btn");
 const closeBtn = document.getElementById("close-btn");
 
 // from pathfinding visualization
-const widthRatio = 0.95;
-const heightRatio = 0.9;
+const widthRatio = 1;
+const heightRatio = 1;
 const fps = 75;
 let scale = 25;
 let offset = 2.5;
@@ -25,7 +27,7 @@ const context = canvasPathfinder.getContext("2d");
 let width, height;
 let board;
 const randomMazeProbability = 0.32;
-const weightValue = 1.5;
+const weightValue = 1;
 // Colors and images
 const startImg = "static/image/start.svg";
 const endImg = "static/image/goal.svg";

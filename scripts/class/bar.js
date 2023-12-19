@@ -15,7 +15,7 @@ class Bar {
    */
   constructor(x, y, width, value, color = theme_color) {
     this.x = x;
-    this.y = y + 30;
+    this.y = y + canvasVerticalOffset;
     this.width = width;
     this.value = value;
     this.height = value * calcLineHeightMultiplier(elements_array);
