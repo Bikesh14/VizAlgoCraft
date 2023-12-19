@@ -30,9 +30,8 @@ async function pathfinder() {
 
 // Sets the size of the canvas
 async function setSize() {
-  width =
-    window.innerWidth * widthRatio - ((window.innerWidth * widthRatio) % scale);
-  height = window.innerHeight * heightRatio;
+  width = window.innerWidth * widthRatio - scale;
+  height = window.innerHeight * heightRatio - 4 * scale;
   canvasPathfinder.width = width;
   canvasPathfinder.height = height;
 }
