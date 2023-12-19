@@ -117,29 +117,60 @@ canvasPathfinder.addEventListener("mousedown", (event) => {
   mouseDragging = true;
 });
 
+// Mousemove event listener for drawing walls while dragging
 canvasPathfinder.addEventListener("mousemove", (event) => {
   if (isInProgress || !mouseDragging) {
     return;
   }
+
+  // Get grid indices from mouse position
   let indices = getGridIndicesFromPos(event.clientX, event.clientY);
+
+  // If valid indices, add a wall to the board
   if (indices) {
     board.addWall(indices.x, indices.y);
   }
 });
 
+// Mouseup event listener to stop dragging
 canvasPathfinder.addEventListener("mouseup", (event) => {
   if (isInProgress) {
     return;
   }
+  // Set mouseDragging to false to indicate the end of dragging
   mouseDragging = false;
 });
 
+// Click event listener for toggling walls on click
 canvasPathfinder.addEventListener("click", () => {
   if (isInProgress) {
     return;
   }
+  // Get grid indices from mouse position
   let indices = getGridIndicesFromPos(event.clientX, event.clientY);
+  // If valid indices, toggle the wall state on the board
   if (indices) {
     board.toggleWall(indices.x, indices.y);
   }
 });
+
+// Function to get grid indices from mouse position
+function getGridIndicesFromPos(posX, posY) {
+  // Get the bounding rectangle of the canvas
+  const rect = canvasPathfinder.getBoundingClientRect();
+
+  // Return false if the position is outside the canvas
+  if (posX > rect.left + canvasPathfinder.width) {
+    return false;
+  }
+  // Calculate grid indices based on mouse position and scale
+  let x = posX - rect.left;
+  let y = posY - rect.top;
+  x = parseInt(x / scale);
+  y = parseInt(y / scale);
+
+  return {
+    x: x,
+    y: y,
+  };
+}

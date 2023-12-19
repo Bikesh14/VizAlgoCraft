@@ -9,6 +9,7 @@ let lines = [];
 // let elements_array = [100, 80, 30, 200, 300, 50, 600];
 let elements_array = randomArrayGenerator(configurations.number_of_elements);
 
+//this is the main function for sort visualization
 function visualizeBars() {
   c = new Canvas(elements_array);
   c.initLines();
@@ -20,9 +21,9 @@ hideDisplay(".sort-section");
 showLoading();
 setTimeout(function () {
   showDisplay(".sort-section");
-  visualizeBars(); // Call the function after 5 seconds
+  visualizeBars(); // Call the function after 1 second
   hideLoading(); // Hide loading screen after your function is done
-}, 1000); // wait for 1 second
+}, 1000);
 
 document
   .getElementById("array-options")
@@ -138,7 +139,6 @@ sortButton.addEventListener("click", function () {
     timers = [];
     ctx.clearRect(0, 0, innerWidth, innerHeight);
     lines = [];
-
     c.initLines();
     numberOfCompares.innerText = "";
   }

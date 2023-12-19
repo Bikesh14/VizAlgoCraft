@@ -4,7 +4,7 @@
  * @returns {Object[]} - An array of sorting actions representing the steps of the algorithm.
  */
 const bubbleSort = ([...array]) => {
-  //Combining millisecond resolution of Date.now() with the microsecond resolution of performance.now()
+  //using microsecond resolution of performance.now()
   let startMicroTime = performance.now();
   let actions = [];
   for (let i = 0; i < array.length; i++) {

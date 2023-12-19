@@ -42,11 +42,13 @@ class Board {
     context.clearRect(0, 0, width, height);
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.cols; j++) {
+        //executes the show method of individual cell object
         this.grid[i][j].show();
       }
     }
   }
 
+  //clears all the paths and walls
   async reset() {
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.cols; j++) {
@@ -59,6 +61,7 @@ class Board {
     this.show();
   }
 
+  //clears the path drawn/found
   clearPath() {
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.cols; j++) {
@@ -69,7 +72,7 @@ class Board {
     this.show();
   }
 
-  // Add a cell at a particular index
+  // Add a wall at a particular index
   addWall(x, y) {
     if (y >= this.rows || x >= this.cols || y < 0 || x < 0) {
       return;
@@ -112,6 +115,7 @@ class Board {
     return neighbors;
   }
 
+  //initialize heuristics for the A* and Dijkstra's algorithm
   async initializeHeuristics() {
     // if heuristics are already initialized, reset the gScore
     if (this.heuristics) {

@@ -3,6 +3,7 @@ class Canvas {
     this.elements_array = elements_array;
   }
 
+  //draw the entire canvas with all the bars
   initLines() {
     ctx.clearRect(0, 0, innerWidth, innerHeight);
     lines = [];

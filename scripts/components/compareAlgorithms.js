@@ -1,6 +1,12 @@
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+/**
+ * Compares the execution times of different sorting algorithms on a given array of elements.
+ *
+ * @param {Array} elements_array - The array of elements to be sorted and compared.
+ * @returns {Promise} - A promise that resolves once all algorithms are executed and compared.
+ */
 
 async function compareAlgorithms(elements_array) {
   showLoading();
@@ -33,6 +39,14 @@ async function compareAlgorithms(elements_array) {
   hideDisplay(".sound-on-off");
 }
 
+/**
+ * Runs a sorting algorithm with a delay, updates the execution time, and displays it.
+ *
+ * @param {function} algorithm - The sorting algorithm function to be executed.
+ * @param {Array} elements_array - The array of elements to be sorted.
+ * @param {string} timeElementId - The HTML element ID to display the execution time.
+ * @returns {Promise} - A promise that resolves after the algorithm is executed with a delay.
+ */
 async function runAlgorithmWithDelay(algorithm, elements_array, timeElementId) {
   let startMicroTime = performance.now();
   algorithm([...elements_array]);

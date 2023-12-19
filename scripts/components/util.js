@@ -82,10 +82,12 @@ function hideDisplay(value) {
   }
 }
 
+// Function to get unique elements from an array
 const uniques = (a) => Array.from(new Set([...a]));
+// Function to check if an element at index i is sorted
 const isSorted = (elements_array, i) =>
   elements_array[i].color === custom_green;
-
+// Object representing sorting algorithms and their corresponding functions
 const sortingStates = {
   bubble: () => bubbleSort(elements_array),
   selection: () => selectionSort(elements_array),

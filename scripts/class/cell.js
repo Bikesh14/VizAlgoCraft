@@ -37,12 +37,14 @@ class Cell {
     }
   }
 
+  //change color of visited node
   async visitNode() {
     sleep(2500 / fps).then(() => {
       this.show(visitedColor);
     });
   }
 
+  //change color of discovered node
   async discoverNode(parent) {
     this.hasBeenDiscovered = true;
     this.parent = parent;
@@ -53,12 +55,13 @@ class Cell {
     await sleep(1000 / fps);
   }
 
+  //display each cell
   async show(color) {
     // Default fill and stroke
     context.lineWidth = 1;
     context.strokeStyle = defaultBorder;
     context.fillStyle = defaultColor;
-
+    //if start node, show the starting image
     if (this.start) {
       let image = new Image();
       image.src = startImg;
@@ -95,12 +98,14 @@ class Cell {
       context.fillStyle = seenColor;
     }
 
+    //drawing borders of cell
     context.strokeRect(
       this.x * scale + offset,
       this.y * scale + offset,
       scale - 2 * offset,
       scale - 2 * offset
     );
+    // adding color to cell
     context.fillRect(
       this.x * scale + offset,
       this.y * scale + offset,
@@ -109,6 +114,7 @@ class Cell {
     );
   }
 
+  //draw the line joining start and end when path is found
   async drawPathLine(prev) {
     //line width of final path mapper
     context.lineWidth = 4;
@@ -123,7 +129,7 @@ class Cell {
     context.stroke(); //draw line
     context.closePath();
 
-    // adding these so that the start and goal images dont get overlapped
+    // adding these so that the start and goal images dont get overlapped by lines drawn at the end
     if (prev == board.start) {
       board.start.show();
     }
